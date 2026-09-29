@@ -21,6 +21,7 @@ dist/
 build/
 .cache/
 tmp/
+.freebuff/
 
 # Proprietary assets safeguard (Vega client demo)
 # Note: Vega imagery and product catalogs are proprietary assets belonging to Vega Auto Accessories Pvt. Ltd.

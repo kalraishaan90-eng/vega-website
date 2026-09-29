@@ -23,7 +23,6 @@
 
     init() {
       this.el.style.transformStyle = 'preserve-3d';
-      this.el.style.willChange = 'transform';
       
       if (this.settings.glare) {
         this.createGlare();
@@ -75,6 +74,7 @@
 
     onMouseEnter() {
       this.isHovering = true;
+      this.el.style.willChange = 'transform';
       this.el.style.transition = `transform ${this.settings.speed}ms cubic-bezier(0.16, 1, 0.3, 1)`;
       if (this.glareElement) {
         this.glareElement.style.opacity = this.settings.maxGlare;
@@ -104,6 +104,7 @@
 
     onMouseLeave() {
       this.isHovering = false;
+      this.el.style.willChange = 'auto';
       this.el.style.transition = `transform ${this.settings.speed}ms cubic-bezier(0.16, 1, 0.3, 1)`;
       this.el.style.transform = `perspective(${this.settings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
 
@@ -113,6 +114,7 @@
     }
 
     destroy() {
+      this.el.style.willChange = 'auto';
       this.el.removeEventListener('mouseenter', this.onMouseEnter);
       this.el.removeEventListener('mousemove', this.onMouseMove);
       this.el.removeEventListener('mouseleave', this.onMouseLeave);
@@ -141,6 +143,10 @@
         element.__vegaTilt = new TiltEffect(element, options);
       }
     }
+  };
+
+  window.initTiltCards = function(selector, options) {
+    if (window.VegaTilt) window.VegaTilt.init(selector, options);
   };
 
   // Auto-init on DOMContentLoaded

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bulk & Team Inquiries | Vega Sportwear</title>
-  <meta name="description" content="Wholesale, team kits, and custom performance sportswear for academies, clubs, and corporate organizations.">
+  <title>Bulk Orders &amp; Custom Teamwear | Vega Sportwear</title>
+  <meta name="description" content="Custom team kits for clubs, academies and boards. GST invoice, factory-direct pricing from Meerut, response within 24-48 business hours.">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -12,257 +12,133 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages.css">
 
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <!-- GSAP 3.12.5 + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="site-nav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 34px; width: auto; object-fit: contain;">
-        <span>VEGA<span class="brand-dot">.</span></span>
-      </a>
+  <!-- Shared navigation, injected by app.js (docs/COMPONENTS.md §3.6) -->
+  <div id="shared-nav-mount"></div>
 
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="collection.html" class="nav-link">Collection</a>
-        <a href="collection.html?category=shorts" class="nav-link">EXODE</a>
-        <a href="bulk.html" class="nav-link active">Bulk Inquiry</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="cart-trigger" id="cart-drawer-btn" aria-label="Open Gear Bag">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          <span class="cart-badge" id="cart-badge-count">0</span>
-        </button>
+  <main>
+    <!-- Hero -->
+    <header class="bulk-hero-section">
+      <div class="container">
+        <span class="eyebrow">Factory B2B • Custom Teamwear</span>
+        <h1 class="bulk-hero-title">Scale Your <span class="bulk-hero-accent">Inventory.</span></h1>
+        <p class="bulk-hero-sub">
+          Custom team kits, tournament whites and grip socks — manufactured in Meerut,
+          shipped factory-direct to clubs, academies, schools and boards worldwide.
+        </p>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Bulk Hero Section -->
-  <section class="bulk-hero">
-    <div class="container-sm">
-      <span class="eyebrow">Enterprise & Institutional Desk</span>
-      <h1>Bulk & Team Inquiries</h1>
-      <p style="font-size: 1.2rem; color: var(--frost); margin-top: var(--space-4);">
-        Equip your sports academy, cricket board, or corporate fitness club directly from our Meerut manufacturing facility.
-      </p>
-    </div>
-  </section>
-
-  <!-- Three Benefit Points Section -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-12);">
-        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6);">
-          <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(254, 73, 42, 0.12); display: flex; align-items: center; justify-content: center; color: var(--ignite); margin-bottom: 16px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    <!-- Benefits -->
+    <section class="bulk-benefits">
+      <div class="container">
+        <div class="bulk-benefits-grid">
+          <div class="bulk-benefit">
+            <span class="bulk-benefit-num mono">01</span>
+            <h3 class="bulk-benefit-title">Custom team kits</h3>
+            <p class="bulk-benefit-text">
+              Sublimated jerseys, trousers and socks with player names, numbers and
+              club crests — produced to your spec, match after match.
+            </p>
           </div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 8px;">1. Factory-Direct Pricing</h3>
-          <p style="font-size: 14px; color: var(--frost);">
-            Cut out distributor middlemen with tiered volume discounts (15% to 35% off) and formal GST tax credit invoices.
-          </p>
-        </div>
-
-        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6);">
-          <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(254, 73, 42, 0.12); display: flex; align-items: center; justify-content: center; color: var(--ignite); margin-bottom: 16px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="bulk-benefit">
+            <span class="bulk-benefit-num mono">02</span>
+            <h3 class="bulk-benefit-title">GST invoice</h3>
+            <p class="bulk-benefit-text">
+              Proper GST invoicing for institutions and registered businesses,
+              with volume pricing on team quantities.
+            </p>
           </div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 8px;">2. Custom Sublimation & Badging</h3>
-          <p style="font-size: 14px; color: var(--frost);">
-            High-definition sublimation prints for team logos, sponsor crests, and individual player names with zero peeling.
-          </p>
-        </div>
-
-        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6);">
-          <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(254, 73, 42, 0.12); display: flex; align-items: center; justify-content: center; color: var(--ignite); margin-bottom: 16px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="bulk-benefit">
+            <span class="bulk-benefit-num mono">03</span>
+            <h3 class="bulk-benefit-title">Response within 24–48 business hours</h3>
+            <p class="bulk-benefit-text">
+              A real person from the B2B desk replies with pricing and lead
+              times — usually much faster.
+            </p>
           </div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 8px;">3. International Match Standards</h3>
-          <p style="font-size: 14px; color: var(--frost);">
-            Same breathable jacquard fabric and anti-blister Cric Sox technologies supplied to national cricket federations worldwide.
-          </p>
         </div>
       </div>
+    </section>
 
-      <!-- Bulk Form & WhatsApp Alternative -->
-      <div class="bulk-form-container" style="max-width: 720px; margin-inline: auto;">
-        <div id="form-wrapper">
-          <div style="text-align: center; margin-bottom: var(--space-8);">
-            <span class="eyebrow">Direct Proposal Form</span>
-            <h2>Submit Your Requirements</h2>
-            <p style="font-size: 14px; margin-top: 6px; color: var(--frost);">
-              Fill in your details below for custom unit quotations and sample fabric swatches.
+    <!-- Form -->
+    <section class="bulk-form-section" id="bulk-form">
+      <div class="container">
+        <div class="bulk-form-wrap">
+          <div class="bulk-form-card" id="bulk-form-wrapper">
+            <h2 class="bulk-form-title">Tell us what your squad needs</h2>
+            <p class="bulk-form-sub">Items, quantities, timelines — the more detail, the sharper the quote.</p>
+
+            <form id="bulk-inquiry-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="bulk-name">Full name</label>
+                <input class="form-input" type="text" id="bulk-name" name="name" autocomplete="name" placeholder="e.g. Arjun Mehta">
+                <span class="field-error">Please enter your full name.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="bulk-email">Business email</label>
+                <input class="form-input" type="email" id="bulk-email" name="email" autocomplete="email" placeholder="you@cluborcompany.in">
+                <span class="field-error">Enter a valid business email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="bulk-gst">GST number <span class="bulk-optional">(optional)</span></label>
+                <input class="form-input" type="text" id="bulk-gst" name="gst" autocomplete="off" placeholder="22AAAAA0000A1Z5" maxlength="15">
+                <span class="field-error">GST numbers are 15 characters.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="bulk-query">Query details</label>
+                <textarea class="form-textarea" id="bulk-query" name="query" rows="5" placeholder="e.g. 40 sublimated T20 kits, navy/orange, sizes M-XXL, needed before the district league in November."></textarea>
+                <span class="field-error">Tell us briefly what you need — items and quantities are enough to start.</span>
+              </div>
+
+              <div class="bulk-form-actions">
+                <button type="submit" class="btn btn-primary btn-lg">Send inquiry</button>
+                <a href="https://wa.me/916398204040?text=Hi%20VEGA%2C%20we%20need%20a%20bulk%20quote%20for%20custom%20teamwear." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span>WhatsApp instead</span>
+                </a>
+              </div>
+            </form>
+
+            <p class="bulk-response-note">
+              Our sales team will get back to you within 24-48 business hours.
             </p>
           </div>
 
-          <form id="bulk-inquiry-form">
-            <div class="form-group">
-              <label class="form-label" for="full-name">Full Name *</label>
-              <input type="text" id="full-name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+          <!-- Success state (demo, no backend) -->
+          <div class="bulk-success-card" id="bulk-success-state" role="status">
+            <div class="success-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-              <div class="form-group">
-                <label class="form-label" for="business-email">Business / Organization Email *</label>
-                <input type="email" id="business-email" class="form-input" placeholder="rahul@cricketacademy.org" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="gst-number">GST Number (Optional)</label>
-                <input type="text" id="gst-number" class="form-input" placeholder="e.g. 09AAACB1234F1Z8">
-              </div>
+            <h2 class="bulk-success-title">Inquiry received</h2>
+            <p class="bulk-success-text">
+              Thanks — your inquiry is logged as
+              <strong class="mono" id="success-ticket-id">VEGA-B2B-…</strong>
+              (demo reference). Our sales team will get back to you within
+              24-48 business hours.
+            </p>
+            <div class="shop-empty-actions">
+              <a href="collection.html" class="btn btn-secondary">Browse the catalog while you wait</a>
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="query-details">Query Details *</label>
-              <textarea id="query-details" class="form-textarea" placeholder="Describe your team requirements: expected quantity (e.g. 50 T-shirts + 50 shorts), colors, timeline, or customization..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-lg w-full" style="margin-top: 8px;">
-              <span>Submit Inquiry</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </button>
-          </form>
-
-          <!-- WhatsApp Alternative -->
-          <div style="margin-top: var(--space-6); text-align: center; border-top: 1px solid var(--border-subtle); padding-top: var(--space-6);">
-            <p style="font-size: 13px; color: var(--frost); margin-bottom: 12px;">Need an instant quote or fabric pictures?</p>
-            <a href="https://wa.me/919876543210?text=Hi%20Vega%20Sportwear%2C%20I%20have%20a%20bulk%2Fteam%20inquiry." class="btn btn-whatsapp w-full" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.115-.527-1.745-.722-2.868-2.484-2.955-2.6-.086-.115-.718-.955-.718-1.821 0-.866.453-1.292.614-1.468.161-.176.353-.22.47-.22.118 0 .235.001.338.006.109.005.255-.041.398.303.144.348.491 1.2.535 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289-.086.102-.181.228-.259.306-.086.086-.176.18-.076.352.1.172.443.731.951 1.184.654.583 1.206.764 1.378.85.172.086.273.072.375-.044.101-.116.433-.505.549-.678.115-.173.231-.144.389-.086.158.058 1.008.475 1.181.562.173.086.288.13.331.202.044.072.044.418-.1 1.823z"/>
-              </svg>
-              <span>Chat with Bulk Specialist on WhatsApp</span>
-            </a>
-          </div>
-
-          <!-- Reassurance Note as specified in PROJECT.md -->
-          <p style="font-size: 13px; color: var(--text-dim); text-align: center; margin-top: 18px;" class="mono">
-            "Our sales team will get back to you within 24-48 business hours."
-          </p>
-        </div>
-
-        <!-- Dynamic Success State -->
-        <div id="form-success-state" style="display: none; text-align: center; padding: 40px 16px;">
-          <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(46, 213, 115, 0.15); border: 2px solid #2ed573; color: #2ed573; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <h2 style="margin-bottom: 8px;">Inquiry Received!</h2>
-          <p style="color: var(--frost); font-size: 15px; margin-bottom: 16px;" id="success-user-msg">
-            Thank you. Your request has been forwarded to the Vega Meerut factory dispatch team.
-          </p>
-          <div class="mono" style="font-size: 13px; background: #111012; padding: 12px; border-radius: 4px; border: 1px solid var(--border-subtle); display: inline-block; margin-bottom: 24px;">
-            Reference ID: <span class="text-accent" id="ref-id-display">VEGA-B2B-9481</span>
-          </div>
-          <div>
-            <a href="collection.html" class="btn btn-secondary">Browse Collection</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- Cart Drawer Component -->
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
-  <aside class="cart-drawer" id="cart-drawer">
-    <div class="drawer-header">
-      <h3 class="drawer-title">Gear Bag (<span id="drawer-item-count">0</span>)</h3>
-      <button class="drawer-close" id="drawer-close-btn" aria-label="Close cart">&times;</button>
-    </div>
-    <div class="drawer-items" id="drawer-items-list"></div>
-    <div class="drawer-footer">
-      <div class="drawer-subtotal">
-        <span>Subtotal</span>
-        <span class="text-accent" id="drawer-subtotal-price">₹0</span>
-      </div>
-      <div class="drawer-actions">
-        <a href="cart.html" class="btn btn-secondary w-full">View Bag & Full Checkout</a>
-        <a href="cart.html" class="btn btn-primary w-full" id="drawer-fast-checkout">Instant Checkout</a>
-      </div>
-    </div>
-  </aside>
+  <!-- Shared footer, injected by app.js -->
+  <div id="shared-footer-mount"></div>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-brand">
-            <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 30px; width: auto; object-fit: contain;">
-            <span>VEGA<span class="brand-dot">.</span></span>
-          </a>
-          <p>Vega Sportwear (Meerut). Engineered for excellence. Powering athletes and international squads worldwide.</p>
-        </div>
-        <div>
-          <h4 class="footer-heading">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="collection.html">Collection</a></li>
-            <li><a href="bulk.html">Bulk & Fleet</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Factory Desk</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:corporate@vegasportwear.com">corporate@vegasportwear.com</a></li>
-            <li><a href="#">Factory Visit & Inspection</a></li>
-            <li><a href="#">GST Certificate Verification</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Manufacturing Hub</h4>
-          <p style="font-size: 13px; color: var(--frost);">Vega Sportwear<br>Sports Complex, Meerut, Uttar Pradesh, India</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>&copy; 2026 Vega Sportwear. All rights reserved.</div>
-        <div class="mono">GST Invoicing • PAN-India Bulk Freight</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
+  <!-- Scripts (order per docs/COMPONENTS.md §1.3) -->
   <script src="assets/js/data.js"></script>
+  <script src="assets/js/tilt.js"></script>
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/app.js"></script>
-
-  <!-- Form Validation & Dynamic Success State -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('bulk-inquiry-form');
-      const formWrapper = document.getElementById('form-wrapper');
-      const successState = document.getElementById('form-success-state');
-      const userMsg = document.getElementById('success-user-msg');
-      const refId = document.getElementById('ref-id-display');
-
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const name = document.getElementById('full-name').value.trim();
-          const email = document.getElementById('business-email').value.trim();
-
-          if (!name || !email) {
-            alert('Please fill out the required fields.');
-            return;
-          }
-
-          const randomRef = 'VEGA-B2B-' + Math.floor(1000 + Math.random() * 9000);
-          refId.textContent = randomRef;
-          userMsg.textContent = `Thank you, ${name}. Your proposal request (${randomRef}) has been sent to our Meerut accounts team.`;
-
-          formWrapper.style.display = 'none';
-          successState.style.display = 'block';
-        });
-      }
-    });
-  </script>
 </body>
 </html>

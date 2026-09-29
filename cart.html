@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Gear Bag | Vega Sportwear</title>
-  <meta name="description" content="Review your selected Vega Sportwear items and complete secure checkout.">
+  <meta name="description" content="Review your Vega Sportwear gear bag. Free shipping in India over ₹999 (demo).">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -12,289 +12,194 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages.css">
 
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <!-- GSAP 3.12.5 + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="site-nav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 34px; width: auto; object-fit: contain;">
-        <span>VEGA<span class="brand-dot">.</span></span>
-      </a>
+  <!-- Shared navigation, injected by app.js (docs/COMPONENTS.md §3.6) -->
+  <div id="shared-nav-mount"></div>
 
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="collection.html" class="nav-link">Collection</a>
-        <a href="collection.html?category=shorts" class="nav-link">EXODE</a>
-        <a href="bulk.html" class="nav-link">Bulk Inquiry</a>
-      </nav>
+  <main>
+    <section class="cart-page-section">
+      <div class="container">
+        <header class="cart-page-header">
+          <span class="eyebrow">Pitch Demo &bull; No Payment Processing</span>
+          <h1 class="cart-page-title">Your gear bag</h1>
+          <p class="cart-page-sub" id="cart-page-count">Loading…</p>
+        </header>
 
-      <div class="nav-actions">
-        <button class="cart-trigger" id="cart-drawer-btn" aria-label="Open Gear Bag">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          <span class="cart-badge" id="cart-badge-count">0</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Cart Main Page -->
-  <main class="cart-page-section">
-    <div class="container">
-      <div style="margin-bottom: var(--space-6);">
-        <span class="eyebrow">Review Equipment</span>
-        <h1>Your Gear Bag</h1>
-      </div>
-
-      <div id="cart-page-view">
-        <!-- Rendered via JS -->
-      </div>
-    </div>
-  </main>
-
-  <!-- Cart Drawer Component -->
-  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
-  <aside class="cart-drawer" id="cart-drawer">
-    <div class="drawer-header">
-      <h3 class="drawer-title">Gear Bag (<span id="drawer-item-count">0</span>)</h3>
-      <button class="drawer-close" id="drawer-close-btn" aria-label="Close cart">&times;</button>
-    </div>
-    <div class="drawer-items" id="drawer-items-list"></div>
-    <div class="drawer-footer">
-      <div class="drawer-subtotal">
-        <span>Subtotal</span>
-        <span class="text-accent" id="drawer-subtotal-price">₹0</span>
-      </div>
-      <div class="drawer-actions">
-        <a href="cart.html" class="btn btn-secondary w-full">View Bag & Full Checkout</a>
-        <a href="cart.html" class="btn btn-primary w-full" id="drawer-fast-checkout">Instant Checkout</a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-brand">
-            <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 30px; width: auto; object-fit: contain;">
-            <span>VEGA<span class="brand-dot">.</span></span>
-          </a>
-          <p>Vega Sportwear (Meerut). Engineered for excellence. Powering athletes and international squads worldwide.</p>
-        </div>
-        <div>
-          <h4 class="footer-heading">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="collection.html">Collection</a></li>
-            <li><a href="bulk.html">Bulk & Fleet</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Trust & Security</h4>
-          <ul class="footer-links">
-            <li><a href="#">256-Bit SSL Encrypted Checkout</a></li>
-            <li><a href="#">Free 7-Day Size Exchange</a></li>
-            <li><a href="#">Pan-India Express Logistics</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Academy or Fleet?</h4>
-          <p style="font-size: 13px; margin-bottom: 12px; color: var(--frost);">Ordering more than 15 units?</p>
-          <a href="bulk.html" class="btn btn-outline btn-sm">B2B Volume Quotes</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>&copy; 2026 Vega Sportwear. All rights reserved. Pitch Demo.</div>
-        <div class="mono">Engineered in Meerut • vegasportwear.com</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/cart.js"></script>
-  <script src="assets/js/app.js"></script>
-
-  <!-- Cart Page Controller -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      let appliedDiscount = 0;
-      let couponCode = '';
-
-      function renderCartPage() {
-        const view = document.getElementById('cart-page-view');
-        if (!view || !window.cartStore) return;
-
-        const items = window.cartStore.items;
-        const subtotal = window.cartStore.getSubtotal();
-        const freeShippingThreshold = 999;
-        const shippingFee = subtotal >= freeShippingThreshold || subtotal === 0 ? 0 : 99;
-        const discountAmount = Math.round(subtotal * appliedDiscount);
-        const finalTotal = subtotal - discountAmount + shippingFee;
-
-        if (items.length === 0) {
-          view.innerHTML = `
-            <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 80px 24px; text-align: center; max-width: 680px; margin-inline: auto;">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 20px; opacity: 0.5;">
-                <circle cx="9" cy="21" r="1"></circle>
-                <circle cx="20" cy="21" r="1"></circle>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-              </svg>
-              <h2 style="font-size: 2.2rem; margin-bottom: 8px;">Your Gear Bag is Empty</h2>
-              <p style="color: var(--frost); margin-bottom: 24px;">Explore our jacquard performance tees, track pants, and tactical shorts.</p>
-              <a href="collection.html" class="btn btn-primary btn-lg">Explore Collection</a>
-            </div>
-          `;
-          return;
-        }
-
-        view.innerHTML = `
-          <div class="cart-layout">
-            <!-- Left Items List -->
-            <div>
-              <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);">
-                <div class="flex items-center justify-between" style="border-bottom: 1px solid var(--border-subtle); padding-bottom: var(--space-3);">
-                  <span class="mono" style="font-size: 13px; color: var(--frost);">PRODUCT / SPECS</span>
-                  <span class="mono" style="font-size: 13px; color: var(--frost);">TOTAL</span>
-                </div>
-
-                ${items.map(item => `
-                  <div class="cart-item" style="grid-template-columns: 80px 1fr auto; padding: 16px; background: #151416;">
-                    <div class="cart-item-img" style="width: 80px; height: 80px;">
-                      <img src="${item.image}" alt="${item.name}">
-                    </div>
-                    <div class="cart-item-info">
-                      <h4 style="font-size: 1rem;"><a href="product.html?id=${item.productId}">${item.name}</a></h4>
-                      <div class="cart-item-variant">${item.size} • ${item.color}</div>
-                      <div class="cart-item-price" style="font-size: 1.1rem; margin-top: 4px;">
-                        ₹${(item.price * item.qty).toLocaleString('en-IN')} 
-                        <span style="font-size: 12px; color: var(--frost); font-weight: normal;">(₹${item.price.toLocaleString('en-IN')} each)</span>
-                      </div>
-                      <div class="qty-control" style="margin-top: 8px;">
-                        <button class="qty-btn" data-qty-delta="-1" data-id="${item.id}">&minus;</button>
-                        <span class="qty-value">${item.qty}</span>
-                        <button class="qty-btn" data-qty-delta="1" data-id="${item.id}">&plus;</button>
-                      </div>
-                    </div>
-                    <button class="cart-item-remove" data-remove-id="${item.id}" aria-label="Remove item">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                    </button>
-                  </div>
-                `).join('')}
-
-                <div class="flex items-center justify-between" style="padding-top: var(--space-4); border-top: 1px solid var(--border-subtle);">
-                  <button class="btn btn-ghost btn-sm" id="clear-all-cart-btn">Clear Gear Bag</button>
-                  <a href="collection.html" class="btn btn-secondary btn-sm">+ Add More Gear</a>
-                </div>
+        <div class="cart-layout">
+          <!-- Line items -->
+          <div class="cart-items-col">
+            <div class="free-shipping-bar">
+              <div class="shipping-bar-label">
+                <span class="shipping-bar-text">DEMO &bull; Free shipping in India over ₹999</span>
+                <span class="shipping-bar-amount mono"></span>
+              </div>
+              <div class="shipping-bar-track">
+                <div class="shipping-bar-fill" style="width:0%"></div>
               </div>
             </div>
 
-            <!-- Right Summary Box -->
-            <div class="cart-summary-box">
-              <h3 style="margin-bottom: var(--space-4);">Order Summary</h3>
-
-              <!-- Shipping Progress Bar -->
-              <div style="background: #151416; padding: 12px; border-radius: var(--radius-sm); margin-bottom: var(--space-4); border: 1px solid var(--border-subtle);">
-                <div style="font-size: 12px; display: flex; justify-content: space-between; margin-bottom: 6px;">
-                  <span>${subtotal >= freeShippingThreshold ? '🎉 Free Pan-India Shipping Unlocked!' : `Add ₹${(freeShippingThreshold - subtotal).toLocaleString('en-IN')} more for Free Shipping`}</span>
-                </div>
-                <div style="height: 6px; background: var(--graphite); border-radius: 99px; overflow: hidden;">
-                  <div style="height: 100%; width: ${Math.min(100, (subtotal / freeShippingThreshold) * 100)}%; background: var(--ignite); transition: width 0.3s ease;"></div>
-                </div>
-              </div>
-
-              <div class="summary-row">
-                <span>Items Subtotal</span>
-                <span class="mono" style="color: var(--brume);">₹${subtotal.toLocaleString('en-IN')}</span>
-              </div>
-
-              ${appliedDiscount > 0 ? `
-                <div class="summary-row" style="color: #2ed573;">
-                  <span>Coupon (${couponCode})</span>
-                  <span class="mono">-₹${discountAmount.toLocaleString('en-IN')}</span>
-                </div>
-              ` : ''}
-
-              <div class="summary-row">
-                <span>Pan-India Shipping</span>
-                <span class="mono">${shippingFee === 0 ? '<span style="color: #2ed573;">FREE</span>' : '₹' + shippingFee}</span>
-              </div>
-
-              <div class="summary-row">
-                <span>GST Tax (Included)</span>
-                <span class="mono" style="color: var(--frost);">12% GST Incl.</span>
-              </div>
-
-              <div class="summary-row summary-total">
-                <span>Total Amount</span>
-                <span style="color: var(--ignite);">₹${finalTotal.toLocaleString('en-IN')}</span>
-              </div>
-
-              <!-- Promo Code Input -->
-              <div style="margin-block: var(--space-4); display: flex; gap: 8px;">
-                <input type="text" id="coupon-input" class="form-input" placeholder="Promo (VEGA10)" value="${couponCode}" style="padding: 0.6rem 0.8rem; text-transform: uppercase;">
-                <button class="btn btn-secondary btn-sm" id="apply-coupon-btn">Apply</button>
-              </div>
-
-              <button class="btn btn-primary btn-lg w-full" id="checkout-cta-btn" style="margin-top: 8px;">
-                <span>Proceed to Checkout</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-
-              <div style="margin-top: var(--space-6); display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--frost);">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ed573" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  <span>100% Authentic Vega Sportwear Factory Direct</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ed573" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Free 7-Day Hassle-Free Size Exchanges</span>
-                </div>
-              </div>
+            <div id="cart-page-items">
+              <!-- Line items rendered by the inline script below -->
             </div>
           </div>
-        `;
 
-        document.getElementById('clear-all-cart-btn')?.addEventListener('click', () => {
-          if (confirm('Clear all items from your gear bag?')) {
-            window.cartStore.clear();
-          }
-        });
+          <!-- Summary -->
+          <aside class="cart-summary-box" id="cart-summary" aria-label="Order summary">
+            <h2 class="cart-summary-title">Summary</h2>
 
-        document.getElementById('apply-coupon-btn')?.addEventListener('click', () => {
-          const input = document.getElementById('coupon-input');
-          const code = input ? input.value.trim().toUpperCase() : '';
-          if (code === 'VEGA10' || code === 'TRACKDAY10') {
-            appliedDiscount = 0.10;
-            couponCode = code;
-            window.cartStore.showToast('Promo code applied: 10% OFF');
-            renderCartPage();
-          } else {
-            alert('Invalid coupon. Try VEGA10 for 10% off.');
-          }
-        });
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <span class="mono" id="cart-subtotal-val">₹0</span>
+            </div>
+            <div class="cart-summary-row">
+              <span>Shipping (India)</span>
+              <span class="mono" id="cart-shipping-val">FREE</span>
+            </div>
 
-        document.getElementById('checkout-cta-btn')?.addEventListener('click', () => {
-          alert('Demo Checkout: In production, this connects to your Shopify / Razorpay checkout flow with UPI, Cards, NetBanking, and COD.');
-        });
+            <div class="cart-summary-row cart-summary-total">
+              <span>Total</span>
+              <span class="mono" id="cart-total-val">₹0</span>
+            </div>
+
+            <div class="cart-summary-actions">
+              <button class="btn btn-primary w-full btn-checkout-demo" id="cart-checkout-btn">Checkout (demo)</button>
+              <a href="collection.html" class="btn btn-secondary w-full">Continue shopping</a>
+            </div>
+
+            <p class="cart-demo-note">
+              Demo store — checkout would connect to Shopify. Orders are also taken
+              directly on <a href="https://wa.me/916398204040" target="_blank" rel="noopener">WhatsApp&nbsp;+91&nbsp;63982&nbsp;04040</a>.
+            </p>
+          </aside>
+        </div>
+
+        <!-- Empty state -->
+        <div class="cart-empty" id="cart-empty-state" hidden>
+          <div class="shop-empty-card">
+            <span class="shop-empty-mark" aria-hidden="true"></span>
+            <h2 class="shop-empty-title">Your gear bag is empty</h2>
+            <p class="shop-empty-text">
+              Match shirts, Cric Sox, training shorts and the EXODE line are
+              waiting in the collection.
+            </p>
+            <div class="shop-empty-actions">
+              <a href="collection.html" class="btn btn-primary">Browse the collection</a>
+              <a href="bulk.html" class="btn btn-secondary">Bulk / B2B orders</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared footer, injected by app.js -->
+  <div id="shared-footer-mount"></div>
+
+  <!-- Scripts (order per docs/COMPONENTS.md §1.3) -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/tilt.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script>
+    // Full cart view — renders from window.VegaCart and re-renders on every change.
+    (function () {
+      var itemsEl = document.getElementById('cart-page-items');
+      var emptyEl = document.getElementById('cart-empty-state');
+      var layoutEl = document.querySelector('.cart-layout');
+      var countEl = document.getElementById('cart-page-count');
+      var subtotalEl = document.getElementById('cart-subtotal-val');
+      var shippingEl = document.getElementById('cart-shipping-val');
+      var totalEl = document.getElementById('cart-total-val');
+
+      function formatINR(amount) {
+        return '₹' + Number(amount || 0).toLocaleString('en-IN');
       }
 
-      renderCartPage();
-      window.addEventListener('vega:cart-updated', renderCartPage);
-    });
+      function escapeHTML(str) {
+        return String(str == null ? '' : str)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      function render(snapshot) {
+        var items = snapshot ? snapshot.items : (window.VegaCart ? window.VegaCart.getItems() : []);
+        var total = snapshot ? snapshot.total : (window.VegaCart ? window.VegaCart.getTotal() : 0);
+        var count = snapshot ? snapshot.count : (window.VegaCart ? window.VegaCart.getCount() : 0);
+        var threshold = (window.VegaCart && window.VegaCart.FREE_SHIPPING_THRESHOLD) || 999;
+
+        countEl.textContent = count === 1 ? '1 item' : count + ' items';
+        subtotalEl.textContent = formatINR(total);
+        shippingEl.textContent = 'FREE';
+        totalEl.textContent = formatINR(total);
+
+        // Shipping demo bar
+        var pct = Math.min(100, Math.round((total / threshold) * 100));
+        var unlocked = total >= threshold && total > 0;
+        var fill = document.querySelector('.cart-page-section .shipping-bar-fill');
+        var text = document.querySelector('.cart-page-section .shipping-bar-text');
+        var amount = document.querySelector('.cart-page-section .shipping-bar-amount');
+        if (fill) {
+          fill.style.width = pct + '%';
+          fill.classList.toggle('unlocked', unlocked);
+        }
+        if (text) {
+          if (!items.length) text.textContent = 'DEMO • Free shipping in India over ₹999';
+          else if (unlocked) text.innerHTML = 'DEMO • <strong style="color: var(--color-success-alt);">Free shipping unlocked</strong>';
+          else text.textContent = 'DEMO • Add ' + formatINR(threshold - total) + ' more for free shipping';
+        }
+        if (amount) amount.textContent = items.length ? formatINR(total) + ' / ' + formatINR(threshold) : '';
+
+        // Empty vs filled
+        var isEmpty = !items.length;
+        emptyEl.hidden = !isEmpty;
+        layoutEl.hidden = isEmpty;
+
+        if (isEmpty) return;
+
+        itemsEl.innerHTML = items.map(function (item) {
+          return (
+            '<div class="cart-item cart-item-row" data-key="' + escapeHTML(item.key) + '">' +
+              '<div class="cart-item-img">' +
+                (item.image ? '<img src="' + escapeHTML(item.image) + '" alt="' + escapeHTML(item.name) + '" loading="lazy" decoding="async" width="80" height="80">' : '') +
+              '</div>' +
+              '<div class="cart-item-info">' +
+                '<div class="cart-item-name">' + escapeHTML(item.name) + '</div>' +
+                '<div class="cart-item-variant">Size: ' + escapeHTML(item.size) + (item.code ? ' &bull; ' + escapeHTML(item.code) : '') + '</div>' +
+                '<div class="cart-item-price">' + formatINR(item.price) + ' each</div>' +
+                '<div class="qty-control">' +
+                  '<button class="qty-btn" data-qty-key="' + escapeHTML(item.key) + '" data-qty-delta="-1" aria-label="Decrease quantity">&minus;</button>' +
+                  '<span class="qty-value">' + item.qty + '</span>' +
+                  '<button class="qty-btn" data-qty-key="' + escapeHTML(item.key) + '" data-qty-delta="1" aria-label="Increase quantity">&plus;</button>' +
+                '</div>' +
+              '</div>' +
+              '<div class="cart-item-row-end">' +
+                '<div class="cart-item-price">' + formatINR(item.price * item.qty) + '</div>' +
+                '<button class="cart-item-remove" data-remove-key="' + escapeHTML(item.key) + '" aria-label="Remove ' + escapeHTML(item.name) + '">' +
+                  '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>' +
+                '</button>' +
+              '</div>' +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      // Demo checkout button (cart.js also catches .btn-checkout-demo via delegation;
+      // this explicit binding covers the standalone button on this page)
+      document.getElementById('cart-checkout-btn').addEventListener('click', function () {
+        if (window.VegaCart) window.VegaCart.toast('Demo only, checkout would connect to Shopify.');
+      });
+
+      if (window.VegaCart) {
+        window.VegaCart.subscribe(render);
+        render(window.VegaCart.getSnapshot());
+      } else {
+        countEl.textContent = 'Cart unavailable';
+      }
+    })();
   </script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

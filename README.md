@@ -5,9 +5,10 @@ Add every new request here. Newest at the bottom. Status: Planned, In progress, 
 
 | # | Date | Request | Status | Notes |
 |---|---|---|---|---|
-| 1 | 2026-09-29 | Redesign vegasportwear.com as a pitch demo: aesthetic, interactive, 3D hero, tilt cards, scroll animation, full shop flow | In progress | Built in Antigravity with multiple agents |
+| 1 | 2026-09-29 | Redesign vegasportwear.com as a pitch demo: aesthetic, interactive, 3D hero, tilt cards, scroll animation, full shop flow | Done | Built in Antigravity with multiple agents |
 | 2 | 2026-09-29 | Build palette from two reference palettes | Done | Palette v1 approved, see section 3 |
 | 3 | 2026-09-29 | Make this editable md with all agent prompts | Done | This file |
+| 4 | 2026-09-29 | Redesign home hero: editorial real-athlete photo, all-white condensed grotesk headline, plain factual subline, square Ignite CTA, underlined secondary link, visible 12-col grid, 1px top progress line | Done | Authentic sportswear brand layout |
 
 ---
 

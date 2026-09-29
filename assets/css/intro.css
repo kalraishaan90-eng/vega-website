@@ -1,0 +1,260 @@
+/**
+ * VEGA SPORTWEAR — FULL-SCREEN 3D INTRO SEQUENCE
+ *
+ * Requirements:
+ * - Full-screen overlay on --void (#0B0B0C).
+ * - Matte graphite 3D extruded Vega V with Ignite (#FE492A) edge rim light.
+ * - 0–2.0s spin ease-in with camera push-in.
+ * - 2.0s explosion with white flash frame (~80ms), camera shake, and shard dispersal.
+ * - 2.4s peak explosion reveal: nav slides in, headline reveals line-by-line (60ms stagger),
+ *   hero content settles in.
+ * - Visible "Skip" button bottom-right (Esc/click skips).
+ * - Respects prefers-reduced-motion and sessionStorage (plays once per session).
+ */
+
+/* --------------------------------------------------------------------------
+   Scroll Lock & Content Hiding during Intro
+   -------------------------------------------------------------------------- */
+body.intro-locked {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none !important;
+}
+
+/* Main site content hidden (visibility / opacity) so layout is computed without flash */
+body.intro-active #shared-nav-mount,
+body.intro-active .site-nav,
+body.intro-active .home-hero-content,
+body.intro-active .home-hero-media,
+body.intro-active .home-hero-scrollcue {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Intro Overlay & Canvas
+   -------------------------------------------------------------------------- */
+.vega-intro-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--void, #0B0B0C);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.vega-intro-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vega-intro-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+}
+
+/* 80ms white flash at 2.0s explosion peak */
+.vega-intro-flash {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 80ms ease-out;
+}
+
+.vega-intro-flash.flash-active {
+  opacity: 0.95;
+}
+
+/* --------------------------------------------------------------------------
+   Skip Button (Bottom-Right)
+   -------------------------------------------------------------------------- */
+.vega-intro-skip {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--frost, #AEB8CF);
+  background: rgba(18, 19, 22, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  pointer-events: auto;
+}
+
+.vega-intro-skip:hover {
+  color: var(--brume, #FFFFFF);
+  border-color: var(--ignite, #FE492A);
+  background: rgba(254, 73, 42, 0.15);
+  transform: translateY(-1px);
+}
+
+.vega-intro-skip-key {
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
+/* --------------------------------------------------------------------------
+   Site Reveal Animations (Triggered at 2.4s peak)
+   -------------------------------------------------------------------------- */
+
+/* Navigation slide-in */
+.site-nav {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease, background-color var(--transition-base), border-color var(--transition-base);
+}
+
+body.intro-active .site-nav {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+body.site-revealed .site-nav {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Headline line-by-line reveal with clip-path mask & 60ms stagger */
+.home-hero-title-line {
+  display: block;
+  overflow: hidden;
+  line-height: 0.95;
+}
+
+.home-hero-title-line > span {
+  display: block;
+}
+
+body.intro-active .home-hero-title-line > span {
+  will-change: transform, opacity;
+  transform: translateY(115%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+}
+
+body.site-revealed .home-hero-title-line:nth-child(1) > span {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0ms;
+}
+
+body.site-revealed .home-hero-title-line:nth-child(2) > span {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 60ms; /* 60ms stagger */
+}
+
+/* Hero supporting content settling in */
+body.intro-active .home-hero-content .eyebrow,
+body.intro-active .home-hero-sub,
+body.intro-active .home-hero-actions,
+body.intro-active .home-hero-ctas,
+body.intro-active .home-hero-stats,
+body.intro-active .home-hero-scrollcue {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+}
+
+body.site-revealed .home-hero-content .eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0ms;
+}
+
+body.site-revealed .home-hero-sub {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 120ms;
+}
+
+body.site-revealed .home-hero-actions,
+body.site-revealed .home-hero-ctas {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 180ms;
+}
+
+body.site-revealed .home-hero-stats {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 240ms;
+}
+
+body.site-revealed .home-hero-scrollcue {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 300ms;
+}
+
+/* Hero background image settling */
+.home-hero-media {
+  transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.intro-active .home-hero-media {
+  opacity: 0;
+  transform: scale(1.06);
+}
+
+body.site-revealed .home-hero-media {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .vega-intro-overlay {
+    display: none !important;
+  }
+  body.intro-locked {
+    overflow: auto !important;
+    height: auto !important;
+  }
+  body.intro-active .site-nav,
+  body.intro-active #shared-nav-mount,
+  body.intro-active .home-hero-content,
+  body.intro-active .home-hero-media,
+  body.intro-active .home-hero-scrollcue {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  body.intro-active .home-hero-title-line > span,
+  body.intro-active .home-hero-content .eyebrow,
+  body.intro-active .home-hero-sub,
+  body.intro-active .home-hero-ctas,
+  body.intro-active .home-hero-stats,
+  body.intro-active .home-hero-scrollcue {
+    transform: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+  }
+}
