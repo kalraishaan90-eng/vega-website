@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collection | VEGA® High-Performance Gear</title>
-  <meta name="description" content="Browse the full lineup of Vega motorcycle helmets, riding jackets, carbon gauntlets, and optical visors.">
+  <title>Collection | Vega Sportwear</title>
+  <meta name="description" content="Explore Vega Sportwear performance apparel, Jacquard T-shirts, Terry pants, and tactical shorts.">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages.css">
 
-  <!-- Lenis -->
+  <!-- External Libraries: Lenis, GSAP + ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -21,13 +23,15 @@
   <header class="site-nav">
     <div class="nav-container">
       <a href="index.html" class="nav-brand">
-        VEGA<span class="brand-dot">.</span>
+        <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 34px; width: auto; object-fit: contain;">
+        <span>VEGA<span class="brand-dot">.</span></span>
       </a>
 
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="collection.html" class="nav-link active">Collection</a>
-        <a href="bulk.html" class="nav-link">Bulk & Fleet</a>
+        <a href="collection.html?category=shorts" class="nav-link">EXODE</a>
+        <a href="bulk.html" class="nav-link">Bulk Inquiry</a>
       </nav>
 
       <div class="nav-actions">
@@ -43,26 +47,23 @@
     </div>
   </header>
 
-  <!-- Collection Page Header -->
+  <!-- Collection Header -->
   <main class="collection-header">
     <div class="container">
-      <span class="eyebrow">Catalog & Equipment</span>
-      <h1>Motorsport Collection</h1>
+      <span class="eyebrow">Athletic Equipment</span>
+      <h1>Performance Collection</h1>
       <p style="max-width: 600px; margin-top: 8px;">
-        Explore our complete catalog of impact-tested motorcycle helmets, dual-homologated touring gear, and racing accessories.
+        Tested for endurance, high-wicking breathability, and unrestricted athletic mobility.
       </p>
 
       <!-- Filter and Search Bar -->
       <div class="filter-bar">
         <div class="filter-pills" id="category-pills">
-          <!-- Dynamically populated or static pills -->
-          <button class="filter-pill active" data-category="all">All Gear (10)</button>
-          <button class="filter-pill" data-category="full-face">Full Face (3)</button>
-          <button class="filter-pill" data-category="modular">Modular Flip-Up (1)</button>
-          <button class="filter-pill" data-category="off-road">Off-Road & MX (1)</button>
-          <button class="filter-pill" data-category="open-face">Open Face (1)</button>
-          <button class="filter-pill" data-category="gear">Apparel & Armor (2)</button>
-          <button class="filter-pill" data-category="accessories">Visors & Tech (2)</button>
+          <button class="filter-pill active" data-category="all">All Gear</button>
+          <button class="filter-pill" data-category="t-shirts">Jacquard T-Shirts</button>
+          <button class="filter-pill" data-category="track-pants">Nylon Terry Pants</button>
+          <button class="filter-pill" data-category="shorts">Tactical Shorts</button>
+          <button class="filter-pill" data-category="teamwear">Teamwear</button>
         </div>
 
         <div class="search-sort-group">
@@ -71,7 +72,7 @@
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="catalog-search" class="form-input" placeholder="Search helmet or model...">
+            <input type="text" id="catalog-search" class="form-input" placeholder="Search gear or model...">
           </div>
 
           <select id="catalog-sort" class="form-select" style="width: 170px;">
@@ -123,8 +124,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-brand">VEGA<span class="brand-dot">.</span></a>
-          <p>Engineered for maximum rider safety, aerodynamics, and comfort. Belgaum, India.</p>
+          <a href="index.html" class="nav-brand">
+            <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 30px; width: auto; object-fit: contain;">
+            <span>VEGA<span class="brand-dot">.</span></span>
+          </a>
+          <p>Vega Sportwear (Meerut). Engineered for excellence. Powering athletes and international squads worldwide.</p>
         </div>
         <div>
           <h4 class="footer-heading">Navigation</h4>
@@ -136,22 +140,22 @@
           </ul>
         </div>
         <div>
-          <h4 class="footer-heading">Certifications</h4>
+          <h4 class="footer-heading">Quality Standards</h4>
           <ul class="footer-links">
-            <li><a href="#">ISI IS:4151 Standards</a></li>
-            <li><a href="#">DOT FMVSS No. 218</a></li>
-            <li><a href="#">ECE 22.06 Regulations</a></li>
+            <li><a href="#">Hydrophobic Poly-Nylon</a></li>
+            <li><a href="#">Anti-Chafing Flatlock Seams</a></li>
+            <li><a href="#">Sublimation Color-Fastness</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="footer-heading">Fleet Inquiries</h4>
-          <p style="font-size: 13px; margin-bottom: 12px;">Need custom team colors or corporate bulk quantities?</p>
+          <h4 class="footer-heading">Bulk Orders</h4>
+          <p style="font-size: 13px; margin-bottom: 12px; color: var(--frost);">Need customized team uniforms or bulk academy orders?</p>
           <a href="bulk.html" class="btn btn-outline btn-sm">Request Volume Quote</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2026 VEGA Auto Accessories Pvt. Ltd. All rights reserved.</div>
-        <div class="mono">Engineered In Belgaum • Global Motorsport Spec</div>
+        <div>&copy; 2026 Vega Sportwear. All rights reserved.</div>
+        <div class="mono">Engineered In Meerut • Authentic Vega Gear</div>
       </div>
     </div>
   </footer>
@@ -173,11 +177,9 @@
       const pills = document.querySelectorAll('.filter-pill');
       const resultsCount = document.getElementById('results-count');
 
-      // Check URL search params for ?category=
       const urlParams = new URLSearchParams(window.location.search);
       let activeCategory = urlParams.get('category') || 'all';
 
-      // Set initial active pill
       pills.forEach(p => {
         if (p.getAttribute('data-category') === activeCategory) {
           p.classList.add('active');
@@ -191,12 +193,10 @@
         const query = searchInput.value.trim().toLowerCase();
         const sortVal = sortSelect.value;
 
-        // Filter category
         if (activeCategory !== 'all') {
           products = products.filter(p => p.category === activeCategory);
         }
 
-        // Filter search query
         if (query) {
           products = products.filter(p => 
             p.name.toLowerCase().includes(query) ||
@@ -206,7 +206,6 @@
           );
         }
 
-        // Sort
         if (sortVal === 'price-asc') {
           products.sort((a, b) => a.price - b.price);
         } else if (sortVal === 'price-desc') {
@@ -215,7 +214,6 @@
           products.sort((a, b) => b.rating - a.rating);
         }
 
-        // Update count
         resultsCount.textContent = `Showing ${products.length} product${products.length === 1 ? '' : 's'}`;
 
         if (products.length === 0) {
@@ -244,7 +242,7 @@
               <img src="${p.image}" alt="${p.name}" loading="lazy">
             </div>
             <div class="card-meta">
-              <span>${p.categoryName.toUpperCase()}</span>
+              <span>${p.categoryName}</span>
               <div class="card-rating">★ <span>${p.rating}</span></div>
             </div>
             <h3 class="card-title">
@@ -268,7 +266,6 @@
         if (window.VegaTilt) window.VegaTilt.init();
       }
 
-      // Event listeners
       pills.forEach(pill => {
         pill.addEventListener('click', () => {
           pills.forEach(p => p.classList.remove('active'));

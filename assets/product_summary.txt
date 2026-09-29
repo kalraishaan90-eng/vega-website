@@ -1,0 +1,420 @@
+ID: 8645341675705 | Handle: jacquard-texture-round-neck-t-shirt-tck-106
+Title: Jacquard Texture Round Neck T-Shirt (TCK 104 )
+Price: Rs. 610.00 (Compare: )
+Options: {'Color': ['DARK SKY', 'LIGHT GREEN', 'Dark Gray'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 12
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/jacquard-texture-round-neck-t-shirt-15.webp?v=1786366668
+----------------------------------------
+ID: 8645340987577 | Handle: jacquard-texture-round-neck-t-shirt-tck-105
+Title: Jacquard Texture Round Neck T-Shirt (TCK 104 )
+Price: Rs. 610.00 (Compare: )
+Options: {'Color': ['Dark Gray', 'DARK SKY', 'LIGHT GREEN'], 'Size': ['S', 'L', 'M', 'XL', 'XXL']}
+Images count: 12
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/jacquard-texture-round-neck-t-shirt-21.webp?v=1786366668
+----------------------------------------
+ID: 8645340233913 | Handle: jacquard-texture-round-neck-t-shirt-1
+Title: Jacquard Texture Round Neck T-Shirt (TCK 104 )
+Price: Rs. 610.00 (Compare: )
+Options: {'Color': ['LIGHT GREEN', 'DARK SKY', 'Dark Gray'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 12
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/jacquard-texture-round-neck-t-shirt-11.webp?v=1786366668
+----------------------------------------
+ID: 8645332369593 | Handle: jacquard-texture-round-neck-t-shirt-tck-104
+Title: Jacquard Texture Round Neck T-Shirt ( TCK 103)
+Price: Rs. 610.00 (Compare: )
+Options: {'Color': ['Dark Gray', 'DARK SKY', 'LIGHT GREEN'], 'Size': ['S', 'M', 'L', 'XL']}
+Images count: 12
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/jacquard-texture-round-neck-t-shirt-24_20a0e00b-d362-41cd-82c1-bef96d055321.webp?v=1786366100
+----------------------------------------
+ID: 8645327782073 | Handle: jacquard-texture-round-neck-t-shirt-tck-103
+Title: Jacquard Texture Round Neck T-Shirt (TCK 103)
+Price: Rs. 610.00 (Compare: )
+Options: {'Color': ['DARK SKY', 'Dark Gray', 'LIGHT GREEN'], 'Size': ['S', 'M', 'L', 'XL']}
+Images count: 12
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/jacquard-texture-round-neck-t-shirt-6_f9255028-00b6-4a49-93a9-ccd703beac42.webp?v=1786364896
+----------------------------------------
+ID: 8645304058041 | Handle: performance-shorts-with-inner-tights-sh-ly-1278
+Title: Performance Shorts with Inner Tights (SH/LY/1277)
+Price: Rs. 670.00 (Compare: )
+Options: {'Color': ['Navy', 'Black'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 8
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/performance-shorts-with-inner-tights-8.webp?v=1786343869
+----------------------------------------
+ID: 8645295866041 | Handle: nylon-terry-track-pants-lw-nt-1284
+Title: Nylon Terry Track Pants (LW/NT/1282)
+Price: Rs. 1199.00 (Compare: )
+Options: {'Color': ['Olive', 'Navy', 'Black', 'Beige'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/nylon-terry-track-pants-OLIVE11.webp?v=1786340218
+----------------------------------------
+ID: 8645290066105 | Handle: nylon-terry-track-pants-lw-nt-1283
+Title: Nylon Terry Track Pants (LW/NT/1282)
+Price: Rs. 1199.00 (Compare: )
+Options: {'Color': ['Beige', 'Olive', 'Navy', 'Black'], 'Size': ['S', 'L', 'M', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/nylon-terry-track-pants-RICEGREY13.webp?v=1786340218
+----------------------------------------
+ID: 8645278990521 | Handle: nylon-terry-track-pants-1
+Title: Nylon Terry Track Pants ( LW/NT/1282)
+Price: Rs. 1199.00 (Compare: )
+Options: {'Color': ['Black', 'Navy', 'Olive', 'Beige'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/nylon-terry-track-pants-black7.webp?v=1786340218
+----------------------------------------
+ID: 8645255659705 | Handle: nylon-terry-track-pants
+Title: Nylon Terry Track Pants (LW/NT/1282)
+Price: Rs. 1199.00 (Compare: )
+Options: {'Color': ['Black', 'Navy', 'Olive', 'Beige'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/nylon-terry-track-pants-black7.webp?v=1786340218
+----------------------------------------
+ID: 8645247991993 | Handle: exode-tactical-shorts-sh-cl-483
+Title: EXODE Tactical Shorts (SH/CL/ 481)
+Price: Rs. 1149.00 (Compare: )
+Options: {'Color': ['Black', 'Navy', 'Brown', 'Beige'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/EXODE-tactical-shorts-14.webp?v=1786338873
+----------------------------------------
+ID: 8645247303865 | Handle: exode-tactical-shorts-sh-cl-482
+Title: EXODE Tactical Shorts (SH/CL/ 481)
+Price: Rs. 1149.00 (Compare: )
+Options: {'Color': ['Navy', 'Black', 'Brown', 'Beige'], 'Size': ['36', 'S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/EXODE-tactical-shorts-6.webp?v=1786338873
+----------------------------------------
+ID: 8645243895993 | Handle: exode-tactical-shorts-sh-cl-481
+Title: EXODE Tactical Shorts (SH/CL/ 481)
+Price: Rs. 1149.00 (Compare: )
+Options: {'Color': ['Beige', 'Black', 'Navy', 'Brown'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/EXODE-tactical-shorts10.webp?v=1786338874
+----------------------------------------
+ID: 8645206999225 | Handle: performance-shorts-with-inner-tights-sh-ly-1277
+Title: Performance Shorts with Inner Tights (SH/LY/1277)
+Price: Rs. 670.00 (Compare: )
+Options: {'Color': ['Black', 'Navy'], 'Size': ['S', 'L', 'M', 'XL', 'XXL']}
+Images count: 8
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/performance-shorts-with-inner-tights-2.webp?v=1786343870
+----------------------------------------
+ID: 8645178196153 | Handle: jacquard-texture-round-neck-t-shirt
+Title: Jacquard Texture Round Neck T-Shirt (TCK 103)
+Price: Rs. 610.00 (Compare: )
+Options: {'Color': ['LIGHT GREEN', 'DARK SKY', 'Dark Gray'], 'Size': ['S', 'L', 'M', 'XL', 'XXL']}
+Images count: 12
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/jacquard-texture-round-neck-t-shirt-2.webp?v=1786364042
+----------------------------------------
+ID: 8645170135225 | Handle: nylon-terry-track-pants-lw-nt-1282
+Title: Nylon Terry Track Pants ( LW/NT/1282 )
+Price: Rs. 1199.00 (Compare: )
+Options: {'Color': ['Navy', 'Black', 'Olive', 'Beige'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/nylon-terry-track-pants-navy2.webp?v=1786340218
+----------------------------------------
+ID: 8644390584505 | Handle: exode-tactical-shorts
+Title: EXODE Tactical Shorts (SH/CL/ 481)
+Price: Rs. 1149.00 (Compare: )
+Options: {'Color': ['Brown', 'navy', 'Black', 'Beige'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/EXODE-tactical-shorts-3.webp?v=1786338874
+----------------------------------------
+ID: 8632703877305 | Handle: supporter-1
+Title: Supporter
+Price: Rs. 440.00 (Compare: )
+Options: {'Color': ['blue'], 'Size': ['S', 'L', 'M', 'XL', 'XXL']}
+Images count: 3
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/supporter-blue-3.webp?v=1785574752
+----------------------------------------
+ID: 8631136846009 | Handle: supporter
+Title: Supporter
+Price: Rs. 440.00 (Compare: )
+Options: {'Color': ['Black'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 4
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/supporter-4.webp?v=1785413933
+----------------------------------------
+ID: 8607710249145 | Handle: exode-mud-motion-relaxed-fit-terry-tee-2
+Title: EXODE Mud & Motion Relaxed fit Terry Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['Olive', 'Beige', 'White', 'Black'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/OLIVE_1.jpg?v=1782817981
+----------------------------------------
+ID: 8607709659321 | Handle: exode-mud-motion-relaxed-fit-terry-tee-1
+Title: EXODE Mud & Motion Relaxed fit Terry Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['White', 'Black', 'Olive', 'Beige'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/WHITE_1.jpg?v=1782817981
+----------------------------------------
+ID: 8607707431097 | Handle: exode-mud-motion-relaxed-fit-terry-tee
+Title: EXODE Mud & Motion Relaxed fit Terry Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['Black', 'White', 'Beige', 'Olive'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/BLACK_1.jpg?v=1782817981
+----------------------------------------
+ID: 8607691800761 | Handle: exode-life-is-a-journey-relaxed-fit-tee-3
+Title: EXODE – Life Is A Journey Relaxed Fit Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['Olive', 'Black', 'White', 'Beige'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/OLIVE.jpg?v=1782819449
+----------------------------------------
+ID: 8607622070457 | Handle: exode-life-is-a-journey-relaxed-fit-tee-2
+Title: EXODE – Life Is A Journey Relaxed Fit Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['Black', 'White', 'Olive', 'Beige'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/BLACK_1_c061dff7-0097-4fc1-96f0-24dbec7f2b81.jpg?v=1782819449
+----------------------------------------
+ID: 8607521308857 | Handle: exode-life-is-a-journey-relaxed-fit-tee-1
+Title: EXODE – Life Is A Journey Relaxed Fit Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['White', 'Black', 'Olive', 'Beige'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/WHITE_1_fe0cc6a3-54de-49e2-86fc-43b5d0b481db.jpg?v=1782819449
+----------------------------------------
+ID: 8607335383225 | Handle: exode-driven-by-nature-relaxed-fit-tee-3
+Title: EXODE – Driven By Nature Relaxed Fit Tee
+Price: Rs. 1599.00 (Compare: )
+Options: {'Color': ['White', 'Black', 'Beige', 'Olive'], 'Size': ['L', 'M', 'XL', 'XXL']}
+Images count: 17
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/WHITE_eaf99924-1e54-41cf-ac6e-8d8b34e39795.jpg?v=1782819842
+----------------------------------------
+ID: 8607250448569 | Handle: exode-driven-by-nature-relaxed-fit-tee-2
+Title: EXODE – Driven By Nature Relaxed Fit Tee
+Price: Rs. 1599.00 (Compare: )
+Options: {'Color': ['Olive', 'Beige', 'Black', 'White'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/OLIVE_d4f4291a-bb74-442b-8c55-e2ec0157e535.jpg?v=1782819842
+----------------------------------------
+ID: 8607050268857 | Handle: exode-driven-by-nature-relaxed-fit-tee-1
+Title: EXODE – Driven By Nature Relaxed Fit Tee
+Price: Rs. 1599.00 (Compare: )
+Options: {'Color': ['Black', 'Beige', 'Olive', 'White'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 18
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/BLACK.jpg?v=1782819842
+----------------------------------------
+ID: 8582703513785 | Handle: tpk-875-a
+Title: T-Shirt Polo (TPK 875 A)
+Price: Rs. 750.00 (Compare: )
+Options: {'Color': ['Peach', 'BLUE MELANGE', 'aqua', 'Green', 'Grey'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 24
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/DSC_1257.jpg?v=1782817533
+----------------------------------------
+ID: 8582754599097 | Handle: exode-driven-by-nature-relaxed-fit-tee
+Title: EXODE – Driven By Nature Relaxed Fit Tee
+Price: Rs. 1599.00 (Compare: )
+Options: {'Color': ['Beige', 'Black', 'Olive', 'White'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/BEIGE_1_b910abb8-4de7-4be5-91f9-deacf50b2c8c.jpg?v=1782819842
+----------------------------------------
+ID: 8582754140345 | Handle: exode-life-is-a-journey-relaxed-fit-tee
+Title: EXODE – Life Is A Journey Relaxed Fit Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['Beige', 'Black', 'Olive', 'White'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/BEIGE_1_68d72751-1240-403c-a571-408d21ba0903.jpg?v=1782819449
+----------------------------------------
+ID: 8582704431289 | Handle: exode-mud-amp-motion-relaxed-fit-terry-tee
+Title: EXODE Mud &amp; Motion Relaxed fit Terry Tee
+Price: Rs. 1799.00 (Compare: )
+Options: {'Color': ['Beige', 'Black', 'white', 'Olive'], 'Size': ['M', 'L', 'XL', 'XXL']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/BEIGE_1.jpg?v=1782817981
+----------------------------------------
+ID: 8582700630201 | Handle: ts-pl-polo
+Title: TS-PL POLO (TKP 875 A)
+Price: Rs. 790.00 (Compare: )
+Options: {'Size': ['S', 'M', 'L', 'XL', 'XXL'], 'Color': ['blue', 'White', 'Gray', 'Yellow']}
+Images count: 16
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/BLUE_2.jpg?v=1782816933
+----------------------------------------
+ID: 8547080798393 | Handle: jackets
+Title: Jackets
+Price: Rs. 1200.00 (Compare: )
+Options: {'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 4
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/sports-jackets-_manufacturer.webp?v=1782200534
+----------------------------------------
+ID: 8546817540281 | Handle: sleeves
+Title: sleeves
+Price: Rs. 190.00 (Compare: )
+Options: {'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 2
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/DSC_1328_JPG.jpg?v=1781080253
+----------------------------------------
+ID: 8546605433017 | Handle: t-shirt-polo
+Title: T-Shirt Polo (TKP 875 A)
+Price: Rs. 790.00 (Compare: )
+Options: {'Color': ['Gray', 'White', 'Yellow', 'blue'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 19
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/DSC_1089_JPG.jpg?v=1781069742
+----------------------------------------
+ID: 8481878573241 | Handle: cric-sox-1
+Title: CRIC-SOX
+Price: Rs. 499.00 (Compare: )
+Options: {'Title': ['Default Title']}
+Images count: 3
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/WhatsAppImage2026-04-21at4.23.29PM.jpg?v=1776834403
+----------------------------------------
+ID: 8472236720313 | Handle: shortsshw-pt-1276
+Title: SHORTS(SHW-PT-1276 )
+Price: Rs. 850.00 (Compare: )
+Options: {'Color': ['Black-Print', 'Navy', 'Teal', 'Black'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 20
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_1aa1dd42-aa26-4688-8a1c-caec0f17dc07.jpg?v=1776081217
+----------------------------------------
+ID: 8472228298937 | Handle: shortsshw-1275-pt-tis
+Title: SHORTS(SHW-1275 PT-TIS)
+Price: Rs. 990.00 (Compare: )
+Options: {'Color': ['Dark Gray', 'Navy', 'Black'], 'Size': ['S', 'M', 'L', 'XL', '2XL']}
+Images count: 15
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_d0271228-7f45-41ac-973a-08c1f869a3f1.jpg?v=1776079840
+----------------------------------------
+ID: 8472220500153 | Handle: shortsshw-1274
+Title: SHORTS(SHW-1274 )
+Price: Rs. 840.00 (Compare: )
+Options: {'Color': ['Black', 'Grey', 'Teal'], 'Size': ['S', 'M', 'L', 'XL', '2XL']}
+Images count: 14
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_505fa183-db2a-4605-9e2b-af83c76b1e74.jpg?v=1776078679
+----------------------------------------
+ID: 8472217256121 | Handle: shortssh-sm-475
+Title: SHORTS(SH-SM-475)
+Price: Rs. 500.00 (Compare: )
+Options: {'Color': ['Black', 'Navy'], 'Size': ['S', 'M', 'L', 'XL', '2XL']}
+Images count: 11
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_8da4cef7-364f-4118-84fe-bc76b395d63f.jpg?v=1776077747
+----------------------------------------
+ID: 8472216961209 | Handle: shorts-sh-pt-468
+Title: SHORTS (SH-PT-468)
+Price: Rs. 470.00 (Compare: )
+Options: {'Color': ['Navy', 'Black'], 'Size': ['S', 'M', 'L', 'XL', '2XL']}
+Images count: 9
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_579c5d68-be09-49e4-b56c-c4bf6e512488.jpg?v=1776077704
+----------------------------------------
+ID: 8472215945401 | Handle: shortssh-pt-467
+Title: SHORTS(SH-PT-467)
+Price: Rs. 470.00 (Compare: )
+Options: {'Color': ['Black', 'Navy'], 'Size': ['S', 'M', 'L', 'XL', '2XL']}
+Images count: 10
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_962a3c78-1b90-41a4-b175-8c7ed20a7387.jpg?v=1776076038
+----------------------------------------
+ID: 8472208867513 | Handle: shortsshk-1273
+Title: SHORTS(SHK-1273 )
+Price: Rs. 850.00 (Compare: )
+Options: {'Color': ['Black', 'Navy'], 'Size': ['S', 'M', 'L', 'XL', '2XL']}
+Images count: 10
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/sports-tshirt.webp?v=1782107676
+----------------------------------------
+ID: 8472204116153 | Handle: cricket-clothingcs-nk-307
+Title: CRICKET CLOTHING(CS-NK-307)
+Price: Rs. 500.00 (Compare: )
+Options: {'Color': ['White'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 4
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_e389e9a0-6c31-4e33-b384-b4bdf19a2de6.jpg?v=1776073535
+----------------------------------------
+ID: 8472202903737 | Handle: cricket-clothingcs-jqrd
+Title: CRICKET CLOTHING(CS-JQRD)
+Price: Rs. 640.00 (Compare: )
+Options: {'Color': ['White'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 5
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_5584a8d7-4ad2-433e-bd3e-708d093fb726.jpg?v=1776073223
+----------------------------------------
+ID: 8472201134265 | Handle: cricket-clothingcp-smdk-407
+Title: CRICKET CLOTHING(CP-SMDK-407)
+Price: Rs. 550.00 (Compare: )
+Options: {'Color': ['White'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 5
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_e9f74121-e03c-4192-9cb3-2592f7f3121a.jpg?v=1776073000
+----------------------------------------
+ID: 8472107090105 | Handle: tracksuitsts-el-666
+Title: TRACKSUITS(TS-EL-666)
+Price: Rs. 2100.00 (Compare: )
+Options: {'Color': ['Navy'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 4
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_7a28bd70-4904-4251-b8e3-da1bbe7398e8.jpg?v=1775913435
+----------------------------------------
+ID: 8472106467513 | Handle: track-bottoms-lw-pt-1283
+Title: TRACK BOTTOMS (LW-PT-1283)
+Price: Rs. 630.00 (Compare: )
+Options: {'Color': ['Black'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 4
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/3_a3e78aac-c179-4f97-8ebe-0d3dcc9d609d.jpg?v=1776230835
+----------------------------------------
+ID: 8472023630009 | Handle: track-bottoms-lw-sm-237
+Title: TRACK BOTTOMS (LW-SM-237)
+Price: Rs. 650.00 (Compare: )
+Options: {'Color': ['Black', 'Navy'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 11
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_a129eb1f-c36c-4779-af2b-7fd17ebdd0f8.jpg?v=1776060263
+----------------------------------------
+ID: 8472010457273 | Handle: track-bottoms-lw-sm-223
+Title: TRACK BOTTOMS (LW-SM-223)
+Price: Rs. 650.00 (Compare: )
+Options: {'Color': ['BLACK-I-BLUE', 'NAVY-WHITE'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 11
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_047dd91d-60e4-4f81-920d-00e32f2b84e0.jpg?v=1776061047
+----------------------------------------
+ID: 8470298689721 | Handle: track-bottoms-bk-1280
+Title: TRACK BOTTOMS (LW-BK-1280)
+Price: Rs. 900.00 (Compare: )
+Options: {'Color': ['Navy', 'Black', 'Grey'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 12
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_952270f3-9cbf-4b0b-95d1-60139440600a.jpg?v=1776057688
+----------------------------------------
+ID: 8470293151929 | Handle: track-bottoms-bb-1281
+Title: TRACK BOTTOMS ( LW-BB-1281 )
+Price: Rs. 800.00 (Compare: )
+Options: {'Color': ['Black', 'Grey', 'LT.Grey', 'Navy'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 17
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_9b3f2fc9-40d1-4823-88ff-58ab32b7cedf.jpg?v=1775914478
+----------------------------------------
+ID: 8470292398265 | Handle: tracksuits
+Title: TRACKSUITS(TS-EL-665)
+Price: Rs. 2100.00 (Compare: )
+Options: {'Color': ['Black'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 5
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/2_5762b4c0-2a17-4b08-ae2d-c24c646cb763.jpg?v=1775913421
+----------------------------------------
+ID: 8466477121721 | Handle: vega-poly-spandex-lightweight-crew-neck-t-shirttck-860
+Title: T-Shirt Crew Neck (TCK-860)
+Price: Rs. 650.00 (Compare: )
+Options: {'Color': ['Black', 'Green', 'White'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 15
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_0e5bdba8-fe49-4a20-ad1a-0753511eb0a5.jpg?v=1775911644
+----------------------------------------
+ID: 8466471649465 | Handle: vega-micro-poly-lightweight-crew-neck-t-shirttck-232
+Title: T-Shirt Crew Neck (TCK-232)
+Price: Rs. 580.00 (Compare: )
+Options: {'Color': ['Black', 'LIGHT GREEN'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 11
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/1_68b6ed0a-8c24-431c-a928-2b126a3e307d.jpg?v=1775654517
+----------------------------------------
+ID: 8466259902649 | Handle: vega-jersey-lycra-crew-neck-t-shirt-tck-101a
+Title: T-Shirt Crew Neck  (TCK-101A)
+Price: Rs. 620.00 (Compare: )
+Options: {'Color': ['Black', 'Navy', 'White'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 11
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/2_0c85d4c4-0865-4887-850b-0cf9d46ad233.jpg?v=1775636625
+----------------------------------------
+ID: 8466169397433 | Handle: vega-cotton-spandex-crew-neck-t-shirttck-101
+Title: T-Shirt Crew Neck(TCK-101)
+Price: Rs. 720.00 (Compare: )
+Options: {'Color': ['Mustard', 'Peach', 'Black', 'blue', 'DARK SKY', 'Grey', 'LIME', 'Navy'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 42
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/2.jpg?v=1775912633
+----------------------------------------
+ID: 8464968155321 | Handle: t-shirt-polo-ts-pk-548
+Title: T-Shirt Polo(TS-PK-548)
+Price: Rs. 590.00 (Compare: )
+Options: {'Color': ['Navy', 'aqua', 'avocado', 'lemon', 'White'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 25
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/blue-1.jpg?v=1782214406
+----------------------------------------
+ID: 8464924704953 | Handle: t-shirt-polo-tpk-875k
+Title: T-Shirt Polo(TPK-875A )
+Price: Rs. 750.00 (Compare: )
+Options: {'Color': ['BLUE MELANGE', 'aqua', 'Grey', 'Green'], 'Size': ['S', 'M', 'L', 'XL', 'XXL']}
+Images count: 20
+First image: https://cdn.shopify.com/s/files/1/0775/8299/1545/files/DSC_4615_6bb9103d-15cf-4630-92a8-0b2d75245122.jpg?v=1775649759
+----------------------------------------

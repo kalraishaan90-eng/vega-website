@@ -1,6 +1,7 @@
 /**
  * VEGA REDESIGN - 3D TILT ENGINE
- * Provides realistic tactile 3D perspective and specular glare on hover
+ * Provides tactile 3D perspective and specular glare on hover.
+ * Zero hardcoded colors; respects prefers-reduced-motion.
  */
 
 (function () {
@@ -57,7 +58,7 @@
           top: 50%;
           left: 50%;
           pointer-events: none;
-          background: radial-gradient(circle, rgba(254, 73, 42, 0.4) 0%, rgba(255, 255, 255, 0.15) 30%, transparent 70%);
+          background: radial-gradient(circle, rgba(var(--ignite-rgb), 0.35) 0%, rgba(var(--frost-rgb), 0.15) 30%, transparent 70%);
           width: 200%;
           height: 200%;
           transform: translate(-50%, -50%);
@@ -122,7 +123,8 @@
 
   window.VegaTilt = {
     init(selector = '[data-tilt], .tilt-card', options = {}) {
-      // Don't initialize tilt on touch devices to conserve battery & preserve touch scroll
+      // Respect prefers-reduced-motion & touch screens
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       if (window.matchMedia('(hover: none)').matches) return;
       
       const elements = document.querySelectorAll(selector);
@@ -133,6 +135,7 @@
       });
     },
     bind(element, options = {}) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       if (window.matchMedia('(hover: none)').matches) return;
       if (element && !element.__vegaTilt) {
         element.__vegaTilt = new TiltEffect(element, options);

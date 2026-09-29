@@ -1,0 +1,27 @@
+# Dependencies & OS files
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Sensitive credentials & environment variables
+.env
+.env.local
+*.pem
+*.key
+
+# Editor & IDE settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary & build caches
+dist/
+build/
+.cache/
+tmp/
+
+# Proprietary assets safeguard (Vega client demo)
+# Note: Vega imagery and product catalogs are proprietary assets belonging to Vega Auto Accessories Pvt. Ltd.
+# This repository is strictly for private stakeholder presentation. DO NOT publish or push to public remotes.

@@ -1,6 +1,13 @@
 /**
- * VEGA REDESIGN - DESIGN SYSTEM TOKENS
- * Core design variables, colors, typography, spacing, and elevation
+ * VEGA SPORTWEAR REDESIGN - DESIGN SYSTEM TOKENS
+ * Palette v1 (Approved):
+ * --void: #0E0D0E (Page background ~55%)
+ * --graphite: #1E1D1F (Cards, surfaces ~20%)
+ * --amarante: #2C0C14 (Wine depth: hero glow, section bands ~8%)
+ * --frost: #AEB8CF (Muted text, borders, 3D rim light ~4%)
+ * --brume: #F4F2EE (Main text, light sections ~10%)
+ * --ignite: #FE492A (Accent: buttons, price, cart bar, hover glow ~3%)
+ * --ignite-hover: #FF6A4D (Interactive hover)
  */
 
 :root {
@@ -17,10 +24,10 @@
   --bg-primary: var(--void);
   --bg-surface: var(--graphite);
   --bg-surface-elevated: #28272a;
-  --bg-accent-subtle: rgba(44, 12, 20, 0.45);
+  --bg-accent-subtle: rgba(44, 12, 20, 0.5);
   --bg-accent-glow: rgba(254, 73, 42, 0.15);
   --border-subtle: rgba(174, 184, 207, 0.12);
-  --border-medium: rgba(174, 184, 207, 0.24);
+  --border-medium: rgba(174, 184, 207, 0.25);
   --border-accent: rgba(254, 73, 42, 0.4);
 
   --text-primary: var(--brume);
@@ -29,10 +36,10 @@
   --text-accent: var(--ignite);
   --text-inverse: var(--void);
 
-  /* Typography */
-  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Typography Rules: Barlow Condensed (Display) & Inter (Body) */
+  --font-display: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   --text-xs: 0.75rem;     /* 12px */
   --text-sm: 0.875rem;    /* 14px */
@@ -43,7 +50,7 @@
   --text-3xl: 2rem;       /* 32px */
   --text-4xl: 2.75rem;    /* 44px */
   --text-5xl: 3.75rem;    /* 60px */
-  --text-6xl: 5rem;       /* 80px */
+  --text-6xl: 5.5rem;     /* 88px */
 
   --weight-regular: 400;
   --weight-medium: 500;
@@ -65,11 +72,11 @@
   --space-20: 5rem;       /* 80px */
   --space-24: 6rem;       /* 96px */
 
-  /* Border Radii */
-  --radius-sm: 4px;
+  /* Border Radii Rules: 4px for buttons, 12px for cards */
+  --radius-sm: 4px;       /* Buttons, badges */
   --radius-md: 8px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
+  --radius-lg: 12px;      /* Cards */
+  --radius-xl: 16px;
   --radius-full: 9999px;
 
   /* Shadows & Glows */
@@ -78,7 +85,7 @@
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7);
   --glow-ignite: 0 0 24px rgba(254, 73, 42, 0.35);
   --glow-ignite-intense: 0 0 45px rgba(254, 73, 42, 0.6);
-  --glow-amarante: 0 0 35px rgba(44, 12, 20, 0.7);
+  --glow-amarante: 0 0 40px rgba(44, 12, 20, 0.8);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);

@@ -1,101 +1,105 @@
-# VEGA REDESIGN — Component & Design System Architecture
+# VEGA SPORTWEAR REDESIGN — Component & Design System Architecture
 > **Written by:** Agent 1  
 > **Status:** Active Reference (Read by all agents and developers)  
-> **Version:** 1.0.0
+> **Version:** 2.0.0 (Approved Palette & Sportswear Pitch Specs)
 
 ---
 
-## 1. Design Tokens & Color Palette
+## 1. Brand & Project Context
+- **Client**: Vega Sportwear (Meerut). Live store: [vegasportwear.com](https://vegasportwear.com).
+- **Pitch Objective**: High-impact redesign pitch for the founders & son.
+- **Brand Vibe**: Dark, aggressive athlete energy blended with clean minimal luxury sportswear.
+- **Key Features**: 3D Cricket Ball hero scene, 3D tilt product cards, GSAP line-by-line scroll story, Cric Sox showcase, international team federation carousel, fake cart with slide-in drawer and standalone cart view, and wholesale/bulk inquiry form.
 
-All colors, typography, elevations, and transitions are centrally defined in [`/assets/css/tokens.css`](../assets/css/tokens.css).
+---
+
+## 2. Design Tokens & Color Palette
+
+Centrally maintained in [`assets/css/tokens.css`](../assets/css/tokens.css):
 
 ```css
 :root {
-  --void: #0E0D0E;         /* Deepest background, canvas */
-  --graphite: #1E1D1F;     /* Surface cards, elevated containers, input backings */
-  --amarante: #2C0C14;     /* Deep rich crimson / dark accent shadows */
-  --frost: #AEB8CF;        /* Secondary typography, subtle borders, icons */
-  --brume: #F4F2EE;        /* Primary high-contrast text, headings */
-  --ignite: #FE492A;       /* Primary interactive accent, CTAs, live glows */
-  --ignite-hover: #FF6A4D; /* Interactive hover / focus state */
+  --void: #0E0D0E;         /* Page background ~55% */
+  --graphite: #1E1D1F;     /* Cards, surfaces ~20% */
+  --amarante: #2C0C14;     /* Wine depth: hero glow, section bands ~8% (never text) */
+  --frost: #AEB8CF;        /* Muted text, borders, 3D rim light ~4% (never big headlines) */
+  --brume: #F4F2EE;        /* Main text, light sections ~10% */
+  --ignite: #FE492A;       /* Accent: buttons, price, cart bar, hover glow ~3% */
+  --ignite-hover: #FF6A4D; /* Ignite hover state */
 }
 ```
 
-### Semantic Tokens
-- `--bg-primary`: `var(--void)`
-- `--bg-surface`: `var(--graphite)`
-- `--bg-surface-elevated`: `#28272a`
-- `--bg-accent-subtle`: `rgba(44, 12, 20, 0.45)`
-- `--bg-accent-glow`: `rgba(254, 73, 42, 0.15)`
-- `--border-subtle`: `rgba(174, 184, 207, 0.12)`
-- `--border-medium`: `rgba(174, 184, 207, 0.24)`
-- `--border-accent`: `rgba(254, 73, 42, 0.4)`
-- `--text-primary`: `var(--brume)`
-- `--text-muted`: `var(--frost)`
-- `--text-accent`: `var(--ignite)`
+### Contrast Ratios:
+- Brume on Void: `~17:1`
+- Frost on Void: `~10:1`
+- Void text on Ignite: `~5.7:1`
 
-### Typography
-- **Display Headings**: `'Syne', sans-serif` (Weights: 600, 700, 800)
-- **Body & Interface**: `'Space Grotesk', sans-serif` (Weights: 400, 500, 600)
-- **Data, Prices & Specs**: `'JetBrains Mono', monospace`
+### Rules of Engagement:
+1. **Headlines**: Brume on Void.
+2. **Ignite Usage**: Never a large background; reserved for high-attention interactive moments (primary buttons, active badges, price callouts).
+3. **Buttons**:
+   - **Primary**: Ignite fill (`#FE492A`) with Void text (`#0E0D0E`), bold, `4px` border radius (`--radius-sm`).
+   - **Secondary**: Transparent fill with Frost border (`1px solid var(--frost)`), `4px` border radius.
+   - **WhatsApp Action**: `#25D366` with dark text for instant messaging orders.
+4. **Radii**: Sharp, confident aesthetic — `4px` for buttons/badges, `12px` (`--radius-lg`) for cards.
+5. **Variables**: Zero hardcoded colors; use CSS custom properties exclusively.
+
+### Typography Rules:
+- **Headlines (Display)**: `'Barlow Condensed', sans-serif` (Weights: 700 to 800, uppercase, tight tracking `-0.01em`).
+- **Body & Controls**: `'Inter', sans-serif` (Weights: 400, 500, 600).
+- **Data & Specs**: `'JetBrains Mono', monospace`.
 
 ---
 
-## 2. Global Component Markup Patterns
+## 3. UI Component Markup Standards
 
-### 2.1 Buttons
+### 3.1 Buttons
 ```html
-<!-- Primary CTA with Ignite Glow -->
-<button class="btn btn-primary">
-  <span>Explore Helmets</span>
+<!-- Primary Button -->
+<a href="collection.html" class="btn btn-primary">
+  <span>Explore Collection</span>
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <path d="M5 12h14M12 5l7 7-7 7"/>
   </svg>
-</button>
+</a>
 
-<!-- Secondary Graphite Button -->
-<a href="/collection.html" class="btn btn-secondary">View Collection</a>
+<!-- Secondary Button -->
+<a href="collection.html?category=shorts" class="btn btn-secondary">Explore EXODE</a>
 
-<!-- Outline Button -->
-<button class="btn btn-outline">Technical Specs</button>
-
-<!-- Icon Only -->
-<button class="btn btn-icon btn-secondary" aria-label="Quick View">
-  <svg ...></svg>
-</button>
+<!-- WhatsApp CTA with Prefilled Intent -->
+<a href="https://wa.me/919876543210?text=Hi%20Vega%20Sportwear" class="btn btn-whatsapp" target="_blank">
+  Order via WhatsApp
+</a>
 ```
 
-### 2.2 Product Card (with 3D Tilt Integration)
-Used on `index.html` and `collection.html`. Uses `data-tilt` for 3D perspective hover.
+### 3.2 Product Card (with 3D Tilt)
+Cards feature `data-tilt`, Graphite background (`--graphite`), and `12px` border radius (`--radius-lg`).
 ```html
-<article class="product-card tilt-card" data-tilt data-id="vega-bolt-bunny">
+<article class="product-card tilt-card" data-tilt data-id="jacquard-texture-round-neck-t-shirt-tck-104">
   <div class="product-badge-group">
-    <span class="badge badge-ignite">NEW</span>
-    <span class="badge badge-outline">ECE 22.06</span>
+    <span class="badge badge-ignite">Authentic Vega</span>
   </div>
 
   <div class="card-media">
-    <img src="/assets/img/bolt-bunny.png" alt="Vega Bolt Bunny" loading="lazy">
+    <img src="assets/img/jacquard-texture-round-neck-t-shirt-tck-104-1.webp" alt="Jacquard T-Shirt" loading="lazy">
   </div>
 
   <div class="card-meta">
-    <span>FULL FACE</span>
-    <div class="card-rating">
-      ★ <span>4.9</span>
-    </div>
+    <span>PERFORMANCE T-SHIRTS</span>
+    <div class="card-rating">★ <span>4.9</span></div>
   </div>
 
   <h3 class="card-title">
-    <a href="/product.html?id=vega-bolt-bunny">Bolt Bunny Special Edition</a>
+    <a href="product.html?id=jacquard-texture-round-neck-t-shirt-tck-104">Jacquard Texture Round Neck T-Shirt</a>
   </h3>
-  <p class="card-desc">Aerodynamic high-impact ABS shell with optical polycarbonate dual visor.</p>
+  <p class="card-desc">High-density quick dry hydrophobic tech weave.</p>
 
   <div class="card-footer">
     <div class="price-box">
-      <span class="price-current">₹2,850</span>
-      <span class="price-original">₹3,499</span>
+      <span class="price-current">₹610</span>
+      <span class="price-original">₹820</span>
     </div>
-    <button class="card-quick-add" data-add-to-cart="vega-bolt-bunny" title="Add to Cart">
+    <button class="card-quick-add" data-add-to-cart="jacquard-texture-round-neck-t-shirt-tck-104" title="Quick Add">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 5v14M5 12h14"/>
       </svg>
@@ -104,101 +108,73 @@ Used on `index.html` and `collection.html`. Uses `data-tilt` for 3D perspective 
 </article>
 ```
 
-### 2.3 Navigation Bar (`.site-nav`)
-Sticky blurred glass navigation across all pages.
-```html
-<header class="site-nav">
-  <div class="nav-container">
-    <a href="/index.html" class="nav-brand">
-      VEGA<span class="brand-dot">.</span>
-    </a>
-    <nav class="nav-links">
-      <a href="/index.html" class="nav-link">Home</a>
-      <a href="/collection.html" class="nav-link">Collection</a>
-      <a href="/bulk.html" class="nav-link">Bulk & Fleet</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="cart-trigger" id="cart-drawer-btn" aria-label="Open Cart">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-        <span class="cart-badge" id="cart-badge-count">0</span>
-      </button>
-    </div>
-  </div>
-</header>
-```
+### 3.3 Navigation Header
+- Transparent over hero section; transitions to blurred solid Void on scroll (`.scrolled`).
+- Incorporates official logo `assets/img/vega-logo.png`.
+- Cart trigger button with real-time reactive badge counter.
 
-### 2.4 Cart Drawer (`#cart-drawer`)
-Persists across all pages, triggered by `.cart-trigger` or programmatically via `window.cartDrawer.open()`.
-```html
-<div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
-<aside class="cart-drawer" id="cart-drawer">
-  <div class="drawer-header">
-    <h3 class="drawer-title">Gear Bag (<span id="drawer-item-count">0</span>)</h3>
-    <button class="drawer-close" id="drawer-close-btn">&times;</button>
-  </div>
-  <div class="drawer-items" id="drawer-items-list">
-    <!-- Rendered dynamically by cart.js -->
-  </div>
-  <div class="drawer-footer">
-    <div class="drawer-subtotal">
-      <span>Subtotal</span>
-      <span class="text-accent" id="drawer-subtotal-price">₹0</span>
-    </div>
-    <div class="drawer-actions">
-      <a href="/cart.html" class="btn btn-secondary w-full">View Bag & Checkout</a>
-      <button class="btn btn-primary w-full" id="drawer-fast-checkout">Instant Checkout</button>
-    </div>
-  </div>
-</aside>
-```
+### 3.4 Cart Drawer
+- Persists across all pages.
+- Can be opened via `#cart-drawer-btn` or programmatic call `window.cartDrawer.open()`.
+- Real-time quantity adjustment, item removal, and subtotal calculation.
 
 ---
 
-## 3. JavaScript Module Contracts
+## 4. JavaScript Engine Contracts
 
-### 3.1 `data.js`
-Exports/attaches `window.VEGA_DATA`:
-- `categories`: Array of `{ id, name, slug, count, image }`
-- `products`: Array of `{ id, name, category, price, originalPrice, rating, reviewsCount, badge, image, images, colors, sizes, description, features, specs }`
-- `teams`: Array of `{ id, name, discipline, riders, helmetModel }`
-- Helper methods: `VEGA_DATA.getProductById(id)`, `VEGA_DATA.getProductsByCategory(cat)`
+### 4.1 `assets/js/data.js`
+- Contains authentic product records extracted from `vegasportwear.com` with real images in `assets/img/`.
+- Exports `window.VEGA_DATA`:
+  - `categories`: Array of `{ id, name, slug, count }`
+  - `products`: Array of `{ id, name, category, price, originalPrice, rating, image, images, colors, sizes, description, features, specs }`
+  - `teams`: Array of worldwide teams (Rwanda, Nigeria, Zimbabwe, Karnataka, etc.)
+  - `getProductById(id)`
+  - `getProductsByCategory(category)`
+  - `formatPrice(price)`
 
-### 3.2 `cart.js`
-Handles localStorage persistence and drawer interaction:
-- `cartStore.get()`: Returns current cart items
-- `cartStore.add(productId, { size, color, quantity })`
-- `cartStore.remove(cartItemId)`
-- `cartStore.updateQty(cartItemId, delta)`
-- `cartStore.clear()`
-- `cartStore.getSubtotal()`
-- `cartDrawer.open()`, `cartDrawer.close()`, `cartDrawer.toggle()`
-- Automatically dispatches `CustomEvent('vega:cart-updated')`
-- Automatically updates `#cart-badge-count` in the navbar.
+### 4.2 `assets/js/cart.js`
+- `window.cartStore`: `localStorage`-backed store with custom event dispatching (`vega:cart-updated`).
+- `addItem(productId, options)`
+- `removeItem(cartItemId)`
+- `updateQty(cartItemId, delta)`
+- `clear()`
+- `getSubtotal()`
+- `showToast(message)`: Non-intrusive floating toast notifications.
 
-### 3.3 `tilt.js`
-Vanilla 3D card tilt effect.
-- Automatically selects `[data-tilt]` elements.
-- Calculates pointer coordinates relative to card center and applies smooth 3D transform (`rotateX`, `rotateY`, `scale3d`).
+### 4.3 `assets/js/hero3d.js`
+- Three.js 3D Hero scene rendering a stitched cricket ball with leather sheen, equatorial seam ridge, and stitches.
+- Dual rim lights in Ignite (`#FE492A`) and Frost (`#AEB8CF`).
+- Deep Amarante (`#2C0C14`) ambient depth.
+- Smooth mouse tracking and continuous scroll rotation.
 
-### 3.4 `hero3d.js`
-Three.js canvas visualizer.
-- Targets `#hero-3d-canvas`.
-- Renders an aerodynamic high-poly wireframe helmet / sphere structure with `--ignite` and `--amarante` ambient lighting, responsive resize handler, and subtle cursor tracking.
+### 4.4 `assets/js/tilt.js`
+- Vanilla 3D tilt engine targeting `[data-tilt]` and `.tilt-card`.
+- Dynamic perspective rotation with specular glare sheen layer.
 
-### 3.5 `app.js`
-Coordinates page loading, Lenis smooth scrolling, scroll reveal animations, search triggers, and active nav link highlighting.
+### 4.5 `assets/js/app.js`
+- Initializes Lenis smooth scrolling.
+- GSAP ScrollTrigger reveals and navbar state changes.
+- Mobile drawer toggling.
 
 ---
 
-## 4. Page Routing & URL Parameters
-| Page | URL | Description |
-|---|---|---|
-| Home | `/index.html` | Hero 3D, featured products, engineering showcase, racing teams |
-| Collection | `/collection.html` | Catalog with live category filtering, search, and sorting |
-| Product | `/product.html?id=<PRODUCT_ID>` | Dynamic details, image gallery, size selector, specs |
-| Cart | `/cart.html` | Dedicated full cart & order checkout calculation |
-| Bulk | `/bulk.html` | Fleet/Distributor bulk order tiered discount calculator & form |
+## 5. File Structure Checklist
+```text
+/index.html               # Home (3D Hero, Scroll Story, Cric Sox, Teams, Tilt Cards)
+/collection.html          # Product catalog with filter pills & search
+/product.html             # Dynamic PDP reading ?id= with WhatsApp order CTA
+/cart.html                # Full cart view with discount code & shipping bar
+/bulk.html                # Institutional & fleet inquiry with validation
+/assets/css/tokens.css    # Approved Palette v1 & spacing tokens
+/assets/css/base.css      # Barlow Condensed & Inter typography
+/assets/css/components.css# Buttons, cards, navbar, badges, drawer
+/assets/css/pages.css     # Page specific styling
+/assets/js/app.js         # Lenis, ScrollTrigger, reveal, nav
+/assets/js/data.js        # Real Vega products, categories & teams
+/assets/js/tilt.js        # 3D card tilt & specular glare
+/assets/js/hero3d.js      # Three.js 3D Cricket Ball Hero
+/assets/js/cart.js        # Cart store & drawer controller
+/assets/img/              # Real Vega images & official logo
+/docs/COMPONENTS.md       # This architecture reference
+/docs/PROJECT.md          # Multi-agent prompt specifications
+```

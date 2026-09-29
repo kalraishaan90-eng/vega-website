@@ -1,10 +1,12 @@
 /**
  * VEGA REDESIGN - CART STORE & DRAWER CONTROLLER
- * Manages localStorage cart items, drawer state, and real-time updates
+ * Manages localStorage cart items, slide-in drawer state, free shipping progress bar,
+ * subtotal calculations, and demo checkout modal.
  */
 
 (function () {
-  const STORAGE_KEY = 'vega_cart_v1';
+  const STORAGE_KEY = 'vega_cart_v2';
+  const FREE_SHIPPING_THRESHOLD = 999;
 
   const cartStore = {
     items: [],
@@ -123,27 +125,33 @@
         toast.style.opacity = '0';
         toast.style.transform = 'translateY(10px)';
         setTimeout(() => toast.remove(), 300);
-      }, 3200);
+      }, 3000);
     },
 
     syncUI() {
-      // Update badge counts
       const count = this.getCount();
+      const subtotal = this.getSubtotal();
+
+      // Update badge counts across navbar
       const badges = document.querySelectorAll('.cart-badge, #cart-badge-count');
       badges.forEach(badge => {
         badge.textContent = count;
         badge.style.display = count > 0 ? 'flex' : 'none';
       });
 
-      // Update drawer UI if present
+      // Update drawer count and subtotal
       const drawerCount = document.getElementById('drawer-item-count');
       if (drawerCount) drawerCount.textContent = count;
 
       const drawerSubtotal = document.getElementById('drawer-subtotal-price');
       if (drawerSubtotal) {
-        drawerSubtotal.textContent = '₹' + this.getSubtotal().toLocaleString('en-IN');
+        drawerSubtotal.textContent = '₹' + subtotal.toLocaleString('en-IN');
       }
 
+      // Update Free Shipping Progress Bar
+      this.updateShippingBars(subtotal);
+
+      // Render Drawer Item List
       const itemsList = document.getElementById('drawer-items-list');
       if (itemsList) {
         if (this.items.length === 0) {
@@ -155,8 +163,8 @@
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
               </svg>
               <p style="font-size: 15px; color: var(--brume); margin-bottom: 8px;">Your Gear Bag is Empty</p>
-              <p style="font-size: 13px;">Add track-tested helmets and riding gear to get started.</p>
-              <a href="collection.html" class="btn btn-secondary btn-sm" style="margin-top: 16px;">Browse Helmets</a>
+              <p style="font-size: 13px;">Add tournament match whites, Cric Sox, or EXODE apparel to start.</p>
+              <a href="collection.html" class="btn btn-secondary btn-sm" style="margin-top: 16px;">Explore Collection</a>
             </div>
           `;
         } else {
@@ -185,10 +193,98 @@
           `).join('');
         }
       }
+
+      // Render full cart.html view if on cart page
+      if (document.getElementById('cart-page-items')) {
+        this.renderFullCartPage(subtotal);
+      }
+    },
+
+    updateShippingBars(subtotal) {
+      const bars = document.querySelectorAll('.shipping-bar-fill');
+      const textEls = document.querySelectorAll('.shipping-bar-text');
+
+      const percent = Math.min(100, Math.round((subtotal / FREE_SHIPPING_THRESHOLD) * 100));
+      const remaining = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
+
+      bars.forEach(bar => {
+        bar.style.width = `${percent}%`;
+        if (percent >= 100) {
+          bar.classList.add('unlocked');
+        } else {
+          bar.classList.remove('unlocked');
+        }
+      });
+
+      textEls.forEach(el => {
+        if (remaining > 0) {
+          el.innerHTML = `Add <strong style="color: var(--ignite);">₹${remaining.toLocaleString('en-IN')}</strong> more for <strong style="color: #fff;">FREE Shipping</strong> across India`;
+        } else {
+          el.innerHTML = `🎉 <strong style="color: #2ecc71;">Congratulations!</strong> You have unlocked FREE Express Delivery!`;
+        }
+      });
+    },
+
+    renderFullCartPage(subtotal) {
+      const container = document.getElementById('cart-page-items');
+      const subtotalEl = document.getElementById('cart-subtotal-val');
+      const totalEl = document.getElementById('cart-total-val');
+      const shippingEl = document.getElementById('cart-shipping-val');
+      if (!container) return;
+
+      if (this.items.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 60px 20px; background: var(--bg-surface); border-radius: var(--radius-card); border: 1px solid var(--border-subtle);">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 16px; opacity: 0.4;">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Your Gear Bag is Empty</h3>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">Discover international standard cricket match wear, Cric Sox, and training apparel.</p>
+            <a href="collection.html" class="btn btn-primary">Browse All Collections &rarr;</a>
+          </div>
+        `;
+        if (subtotalEl) subtotalEl.textContent = '₹0';
+        if (shippingEl) shippingEl.textContent = '₹0';
+        if (totalEl) totalEl.textContent = '₹0';
+        return;
+      }
+
+      container.innerHTML = this.items.map(item => `
+        <div class="cart-item" style="padding: 16px; margin-bottom: 12px; grid-template-columns: 90px 1fr auto;" data-id="${item.id}">
+          <div class="cart-item-img" style="width: 90px; height: 90px;">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="cart-item-info">
+            <h4 style="font-size: 16px; margin-bottom: 4px;">${item.name}</h4>
+            <div class="cart-item-variant">${item.size} • ${item.color}</div>
+            <div class="cart-item-price" style="font-size: 16px; margin-top: 4px;">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
+            <div class="qty-control" style="margin-top: 8px;">
+              <button class="qty-btn" data-qty-delta="-1" data-id="${item.id}">&minus;</button>
+              <span class="qty-value">${item.qty}</span>
+              <button class="qty-btn" data-qty-delta="1" data-id="${item.id}">&plus;</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" data-remove-id="${item.id}" title="Remove Item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </button>
+        </div>
+      `).join('');
+
+      const shipping = subtotal >= FREE_SHIPPING_THRESHOLD || subtotal === 0 ? 0 : 99;
+      const total = subtotal + shipping;
+
+      if (subtotalEl) subtotalEl.textContent = '₹' + subtotal.toLocaleString('en-IN');
+      if (shippingEl) shippingEl.textContent = shipping === 0 ? 'FREE' : '₹' + shipping;
+      if (totalEl) totalEl.textContent = '₹' + total.toLocaleString('en-IN');
     },
 
     bindEvents() {
-      // Global delegated quick add to cart
+      // Delegated Quick Add to Cart
       document.addEventListener('click', (e) => {
         const addBtn = e.target.closest('[data-add-to-cart]');
         if (addBtn) {
@@ -216,7 +312,81 @@
           this.removeItem(id);
           return;
         }
+
+        // Demo checkout triggers
+        const checkoutBtn = e.target.closest('.btn-checkout-demo, #drawer-fast-checkout, #checkout-proceed-btn');
+        if (checkoutBtn) {
+          e.preventDefault();
+          this.triggerDemoCheckout();
+          return;
+        }
+
+        // Close demo modal
+        const closeDemoBtn = e.target.closest('#demo-modal-close-btn, .demo-modal-overlay');
+        if (closeDemoBtn && (!e.target.closest('.demo-modal-card') || e.target.id === 'demo-modal-close-btn')) {
+          this.closeDemoCheckout();
+          return;
+        }
       });
+    },
+
+    triggerDemoCheckout() {
+      if (this.items.length === 0) {
+        this.showToast('Your gear bag is empty! Add products first.');
+        return;
+      }
+
+      let modal = document.getElementById('demo-checkout-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'demo-checkout-modal';
+        modal.className = 'demo-modal-overlay';
+        modal.innerHTML = `
+          <div class="demo-modal-card">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(var(--ignite-rgb), 0.15); border: 2px solid var(--ignite); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--ignite);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Demo Order Reserved!</h3>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+              Thank you for exploring VEGA. This is a functional prototype checkout.
+            </p>
+            <div style="background: rgba(14, 13, 14, 0.6); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle); text-align: left; font-family: var(--font-mono); font-size: 13px; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="color: var(--text-muted);">Order ID:</span>
+                <span style="color: var(--ignite); font-weight: bold;">#VG-${Math.floor(100000 + Math.random() * 900000)}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                <span style="color: var(--text-muted);">Items Ordered:</span>
+                <span>${this.getCount()} units</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Total Amount:</span>
+                <span style="color: var(--text-primary); font-weight: bold;">₹${this.getSubtotal().toLocaleString('en-IN')}</span>
+              </div>
+            </div>
+            <button class="btn btn-primary w-full" id="demo-modal-close-btn">Continue Exploring VEGA</button>
+          </div>
+        `;
+        document.body.appendChild(modal);
+      } else {
+        // Update values in existing modal
+        const card = modal.querySelector('.demo-modal-card');
+        if (card) {
+          card.querySelector('span[style*="font-weight: bold;"]:last-child').textContent = '₹' + this.getSubtotal().toLocaleString('en-IN');
+        }
+      }
+
+      modal.classList.add('active');
+      cartDrawer.close();
+    },
+
+    closeDemoCheckout() {
+      const modal = document.getElementById('demo-checkout-modal');
+      if (modal) {
+        modal.classList.remove('active');
+      }
     }
   };
 
@@ -229,7 +399,6 @@
       this.overlay = document.getElementById('cart-drawer-overlay');
       this.drawer = document.getElementById('cart-drawer');
 
-      // Bind trigger buttons
       document.querySelectorAll('.cart-trigger, #cart-drawer-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();

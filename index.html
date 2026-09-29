@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VEGA® | Performance Motorcycle Helmets & Riding Gear</title>
-  <meta name="description" content="India's iconic helmet brand re-engineered. ECE 22.06 & DOT certified carbon racing helmets, modular touring gear, and rider protection.">
+  <title>Vega Sportwear | Engineered for Excellence</title>
+  <meta name="description" content="Official Vega Sportwear redesign. Premium athletic sportswear, Cric Sox, tactical apparel, and international teamwear.">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -12,32 +12,31 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages.css">
 
-  <!-- External Libraries: Three.js, Lenis, GSAP -->
+  <!-- CDN Dependencies: Three.js, Lenis, GSAP with ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar (Transparent over hero, solid on scroll) -->
   <header class="site-nav">
     <div class="nav-container">
       <a href="index.html" class="nav-brand">
-        VEGA<span class="brand-dot">.</span>
+        <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 34px; width: auto; object-fit: contain;">
+        <span>VEGA<span class="brand-dot">.</span></span>
       </a>
 
       <nav class="nav-links">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="collection.html" class="nav-link">Collection</a>
-        <a href="bulk.html" class="nav-link">Bulk & Fleet</a>
+        <a href="collection.html?category=shorts" class="nav-link">EXODE</a>
+        <a href="bulk.html" class="nav-link">Bulk Inquiry</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="collection.html" class="btn btn-ghost btn-sm" style="display: none; @media(min-width: 768px){display:inline-flex;}">
-          Search Gear
-        </a>
-        <button class="cart-trigger" id="cart-drawer-btn" aria-label="Open Gear Bag">
+        <button class="cart-trigger" id="cart-drawer-btn" aria-label="Open Cart Drawer">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>
@@ -49,7 +48,7 @@
     </div>
   </header>
 
-  <!-- Hero Section with 3D Three.js Visualizer -->
+  <!-- 3D Hero Section -->
   <section class="hero-section">
     <div class="hero-canvas-container">
       <canvas id="hero-3d-canvas"></canvas>
@@ -59,16 +58,20 @@
       <div class="hero-content">
         <div class="eyebrow">
           <span class="eyebrow-dot"></span>
-          <span>2026 Motorsport Series</span>
+          <span>International Athletic Pedigree</span>
         </div>
 
         <h1 class="hero-title">
-          <span>Engineered for</span>
-          <span class="glow-text">Pure Velocity.</span>
+          <span>Unleash</span>
+          <span class="glow-text">Power.</span>
         </h1>
 
-        <p class="hero-subtitle">
-          Over 40 years of Indian track heritage, reinvented with aerospace carbon composites, multi-stage venturi airflow, and global ECE 22.06 homologation.
+        <p class="hero-subtitle" style="font-size: 1.25rem; font-weight: 500; color: var(--brume); margin-bottom: var(--space-4);">
+          Engineered for Excellence.
+        </p>
+
+        <p style="max-width: 520px; margin-bottom: var(--space-8); font-size: 15px;">
+          From Meerut to international cricket arenas, Vega crafts high-performance apparel engineered for punishing training, heat dispersion, and unyielding durability.
         </p>
 
         <div class="hero-cta-group">
@@ -78,164 +81,150 @@
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="bulk.html" class="btn btn-outline btn-lg">Bulk & Fleet</a>
+          <a href="collection.html?category=shorts" class="btn btn-secondary btn-lg">Explore EXODE</a>
         </div>
 
         <div class="hero-stats">
           <div class="stat-item">
-            <div class="stat-value">1180<span style="font-size: 1rem; color: var(--ignite);">g</span></div>
-            <div class="stat-label">Ultra-Light 3K Carbon</div>
+            <div class="stat-value">6+</div>
+            <div class="stat-label">National Cricket Teams</div>
           </div>
           <div class="stat-item">
-            <div class="stat-value">22.06</div>
-            <div class="stat-label">ECE & DOT Certified</div>
+            <div class="stat-value">4-Way</div>
+            <div class="stat-label">Hydrophobic Stretch</div>
           </div>
           <div class="stat-item">
-            <div class="stat-value">40+</div>
-            <div class="stat-label">Years of Heritage</div>
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Indian Craftsmanship</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Category Spotlight Grid -->
-  <section class="section">
-    <div class="container">
-      <div class="flex items-center justify-between" style="margin-bottom: var(--space-8);">
-        <div>
-          <span class="eyebrow">Aero Taxonomy</span>
-          <h2>Select Your Discipline</h2>
-        </div>
-        <a href="collection.html" class="btn btn-outline btn-sm">All Categories &rarr;</a>
-      </div>
-
-      <div class="category-cards">
-        <a href="collection.html?category=full-face" class="category-card">
-          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80');"></div>
-          <div class="category-card-content">
-            <span class="badge badge-ignite" style="margin-bottom: 8px;">TRACK & STREET</span>
-            <h3 style="font-size: 1.4rem;">Full Face</h3>
-            <p style="font-size: 13px; color: var(--frost);">Maximum aero impact dispersion</p>
-          </div>
-        </a>
-
-        <a href="collection.html?category=modular" class="category-card">
-          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=600&q=80');"></div>
-          <div class="category-card-content">
-            <span class="badge badge-outline" style="margin-bottom: 8px;">TOURING</span>
-            <h3 style="font-size: 1.4rem;">Modular Flip-Up</h3>
-            <p style="font-size: 13px; color: var(--frost);">Dual P/J homologated freedom</p>
-          </div>
-        </a>
-
-        <a href="collection.html?category=off-road" class="category-card">
-          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80');"></div>
-          <div class="category-card-content">
-            <span class="badge badge-ignite" style="margin-bottom: 8px;">DIRT & MX</span>
-            <h3 style="font-size: 1.4rem;">Off-Road Rally</h3>
-            <p style="font-size: 13px; color: var(--frost);">Roost peaks & high-flow dust screens</p>
-          </div>
-        </a>
-
-        <a href="collection.html?category=gear" class="category-card">
-          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80');"></div>
-          <div class="category-card-content">
-            <span class="badge badge-outline" style="margin-bottom: 8px;">PROTECTION</span>
-            <h3 style="font-size: 1.4rem;">Apparel & Armor</h3>
-            <p style="font-size: 13px; color: var(--frost);">Cordura jackets & carbon gauntlets</p>
-          </div>
-        </a>
+  <!-- Pinned Scroll Story Section (reveals line by line) -->
+  <section class="section scroll-story-section" id="scroll-story" style="background: #111012; border-block: 1px solid var(--border-subtle); padding-block: var(--space-24);">
+    <div class="container-sm" style="text-align: center;">
+      <span class="eyebrow" style="margin-bottom: 24px;">The Athlete Creed</span>
+      
+      <div class="story-lines" style="display: flex; flex-direction: column; gap: 24px; font-family: var(--font-display); text-transform: uppercase;">
+        <h2 class="story-line" style="font-size: clamp(2.2rem, 5vw, 4rem); opacity: 0.2; transition: opacity 0.5s ease, transform 0.5s ease; transform: translateY(15px);">
+          We do not build for the casual bench.
+        </h2>
+        <h2 class="story-line" style="font-size: clamp(2.2rem, 5vw, 4rem); opacity: 0.2; color: var(--ignite); transition: opacity 0.5s ease, transform 0.5s ease; transform: translateY(15px);">
+          We engineer for the 90th minute.
+        </h2>
+        <h2 class="story-line" style="font-size: clamp(2.2rem, 5vw, 4rem); opacity: 0.2; transition: opacity 0.5s ease, transform 0.5s ease; transform: translateY(15px);">
+          For the blistering desert sun.
+        </h2>
+        <h2 class="story-line" style="font-size: clamp(2.2rem, 5vw, 4rem); opacity: 0.2; transition: opacity 0.5s ease, transform 0.5s ease; transform: translateY(15px);">
+          For champions who strike first.
+        </h2>
       </div>
     </div>
   </section>
 
-  <!-- Featured Products with 3D Tilt Cards -->
-  <section class="section" style="background: rgba(30, 29, 31, 0.35); border-block: 1px solid var(--border-subtle);">
-    <div class="container">
-      <div class="flex items-center justify-between" style="margin-bottom: var(--space-8);">
-        <div>
-          <span class="eyebrow">Pro Lineup</span>
-          <h2>Featured Flagships</h2>
-        </div>
-        <a href="collection.html" class="btn btn-secondary">Explore All (10)</a>
-      </div>
-
-      <div class="products-grid" id="featured-products-container">
-        <!-- Rendered dynamically or populated via data.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Engineering & Aerodynamic Breakthrough -->
-  <section class="section">
+  <!-- Cric Sox Feature (Pinned block with parallax scaling) -->
+  <section class="section cric-sox-section" style="overflow: hidden; background: radial-gradient(circle at 70% 50%, rgba(44, 12, 20, 0.4), var(--void));">
     <div class="container">
       <div class="feature-split">
-        <div class="feature-media">
-          <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80" alt="Aerodynamic Wind Tunnel Testing" loading="lazy">
+        <div>
+          <span class="eyebrow">Flagship Innovation</span>
+          <h2 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 16px;">
+            Vega Cric Sox<span style="color: var(--ignite);">.</span>
+          </h2>
+          <blockquote style="font-size: 1.35rem; color: var(--brume); font-weight: 600; line-height: 1.4; border-left: 3px solid var(--ignite); padding-left: 16px; margin-bottom: 20px;">
+            "Designed to meet the rigorous standards of International Cricket."
+          </blockquote>
+          <p style="font-size: 15px; margin-bottom: 24px;">
+            Targeted arch compression, double-cushioned heel strike damping, and anti-blister technical micro-fiber. Trusted by national opening bowlers and top-order batsmen facing 145 km/h deliveries.
+          </p>
+          <div style="display: flex; gap: 16px;">
+            <a href="collection.html" class="btn btn-primary">Equip Cric Sox</a>
+            <a href="bulk.html" class="btn btn-secondary">Team Custom Orders</a>
+          </div>
         </div>
 
-        <div>
-          <span class="eyebrow">Safety Without Compromise</span>
-          <h2>The Vega Impact Matrix</h2>
-          <p style="margin-top: var(--space-4);">
-            Every Vega helmet undergoes brutal testing in our Belgaum R&D facility. From 7.5 m/s drop towers to high-velocity projectile strikes, our dual-density EPS liners absorb and diffuse rotational kinetic forces before they ever reach the skull.
-          </p>
-
-          <div class="spec-list">
-            <div class="spec-item">
-              <div class="spec-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-              <div>
-                <h4 style="font-size: 1rem; margin-bottom: 2px;">Dual-Density Multi-Zone EPS</h4>
-                <p style="font-size: 13px;">Different compression densities calibrated specifically for temple, crown, and occipital impacts.</p>
-              </div>
-            </div>
-
-            <div class="spec-item">
-              <div class="spec-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
-                </svg>
-              </div>
-              <div>
-                <h4 style="font-size: 1rem; margin-bottom: 2px;">Venturi Airflow Circuit</h4>
-                <p style="font-size: 13px;">Negative pressure creates active suction, extracting stale warm air out of the rear exhaust spoiler.</p>
-              </div>
-            </div>
-
-            <div class="spec-item">
-              <div class="spec-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                </svg>
-              </div>
-              <div>
-                <h4 style="font-size: 1rem; margin-bottom: 2px;">Optical Grade Class 1 Visors</h4>
-                <p style="font-size: 13px;">Bayer polycarbonate with zero refractive distortion, UV400 filtering, and Pinlock 70 fog resistance.</p>
-              </div>
-            </div>
+        <div class="feature-media" style="aspect-ratio: 1/1; background: #151416; display: flex; align-items: center; justify-content: center; position: relative;">
+          <img src="assets/img/hero-banner-1.jpg" alt="Vega Cric Sox Performance" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9) contrast(1.1);" id="cric-sox-img">
+          <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(14, 13, 14, 0.85); backdrop-filter: blur(8px); padding: 12px 18px; border-radius: 4px; border: 1px solid var(--border-subtle);">
+            <div class="mono" style="font-size: 11px; color: var(--frost);">TEST MATCH GRADE</div>
+            <div style="font-size: 14px; font-weight: bold; color: var(--brume);">Dual High-Density Cushioning</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Racing Squad & INMRC Heritage -->
-  <section class="section" style="background: radial-gradient(circle at 50% 50%, rgba(44, 12, 20, 0.5), #0E0D0E 80%);">
+  <!-- Powering Teams Worldwide (Sliding Strip) -->
+  <section class="section" style="padding-bottom: var(--space-12); border-top: 1px solid var(--border-subtle); background: var(--void);">
     <div class="container">
-      <div style="text-align: center; max-width: 640px; margin-inline: auto; margin-bottom: var(--space-12);">
-        <span class="eyebrow">Born on the Asphalt</span>
-        <h2>Vega Factory Racing</h2>
-        <p style="margin-top: 8px;">Pro-level feedback directly from the grid of the Indian National Motorcycle Racing Championship shapes every production shell we build.</p>
+      <div style="text-align: center; margin-bottom: var(--space-8);">
+        <span class="eyebrow">Global Reach</span>
+        <h2>Powering Teams Worldwide</h2>
+        <p style="font-size: 14px; color: var(--frost); margin-top: 6px;">Proud kit supplier to premier domestic & international cricket boards.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-8);" id="teams-container">
-        <!-- Injected via data.js -->
+      <!-- Teams Strip Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px;">
+        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center;">
+          <div class="mono text-accent" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">RWANDA</div>
+          <p style="font-size: 12px; color: var(--frost);">National Cricket Team</p>
+        </div>
+        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center;">
+          <div class="mono text-accent" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">NIGERIA</div>
+          <p style="font-size: 12px; color: var(--frost);">National Cricket Federation</p>
+        </div>
+        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center;">
+          <div class="mono text-accent" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">ZIMBABWE</div>
+          <p style="font-size: 12px; color: var(--frost);">Domestic First-Class</p>
+        </div>
+        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center;">
+          <div class="mono text-accent" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">KARNATAKA</div>
+          <p style="font-size: 12px; color: var(--frost);">State Premier Squads</p>
+        </div>
+        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center;">
+          <div class="mono text-accent" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">MALAWI</div>
+          <p style="font-size: 12px; color: var(--frost);">National Cricket Team</p>
+        </div>
+        <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center;">
+          <div class="mono text-accent" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;">SIERRA LEONE</div>
+          <p style="font-size: 12px; color: var(--frost);">National Cricket Board</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers: Three 3D Tilt Cards -->
+  <section class="section" style="background: rgba(30, 29, 31, 0.4); border-block: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="flex items-center justify-between" style="margin-bottom: var(--space-8);">
+        <div>
+          <span class="eyebrow">Curated Lineup</span>
+          <h2>Best Sellers</h2>
+        </div>
+        <a href="collection.html" class="btn btn-secondary btn-sm">Full Catalog &rarr;</a>
+      </div>
+
+      <div class="products-grid" id="best-sellers-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <!-- Injected via data.js (top 3 products with tilt cards) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Bulk Orders CTA Strip -->
+  <section class="section" style="background: linear-gradient(135deg, #1E1D1F 0%, #2C0C14 100%); border-bottom: 1px solid var(--border-subtle); padding-block: var(--space-12);">
+    <div class="container">
+      <div class="flex items-center justify-between" style="flex-wrap: wrap; gap: 24px;">
+        <div>
+          <span class="badge badge-ignite" style="margin-bottom: 8px;">B2B & INSTITUTIONS</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 6px;">Equipping Academies, Clubs & Corporate Fleets</h2>
+          <p style="font-size: 14px; color: var(--frost); max-width: 600px;">Direct factory pricing, custom sublimation team kits, and dedicated support for orders of 15+ units.</p>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <a href="bulk.html" class="btn btn-primary btn-lg">Request Bulk Quote</a>
+          <a href="https://wa.me/919876543210?text=Hi%20Vega%20Sportwear%2C%20I%20am%20interested%20in%20a%20bulk%20quote" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
       </div>
     </div>
   </section>
@@ -247,9 +236,7 @@
       <h3 class="drawer-title">Gear Bag (<span id="drawer-item-count">0</span>)</h3>
       <button class="drawer-close" id="drawer-close-btn" aria-label="Close cart">&times;</button>
     </div>
-    <div class="drawer-items" id="drawer-items-list">
-      <!-- Items dynamically populated by cart.js -->
-    </div>
+    <div class="drawer-items" id="drawer-items-list"></div>
     <div class="drawer-footer">
       <div class="drawer-subtotal">
         <span>Subtotal</span>
@@ -267,63 +254,61 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-brand">VEGA<span class="brand-dot">.</span></a>
-          <p>Engineered for maximum rider safety, aerodynamics, and comfort. Proudly manufactured in India to global motorsport standards.</p>
+          <a href="index.html" class="nav-brand">
+            <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 30px; width: auto; object-fit: contain;">
+            <span>VEGA<span class="brand-dot">.</span></span>
+          </a>
+          <p>Vega Sportwear (Meerut). Engineered for excellence. Powering athletes and international squads worldwide.</p>
         </div>
 
         <div>
           <h4 class="footer-heading">Collections</h4>
           <ul class="footer-links">
-            <li><a href="collection.html?category=full-face">Full Face Helmets</a></li>
-            <li><a href="collection.html?category=modular">Modular Flip-Up</a></li>
-            <li><a href="collection.html?category=off-road">Off-Road & Motocross</a></li>
-            <li><a href="collection.html?category=gear">Riding Jackets & Gloves</a></li>
-            <li><a href="collection.html?category=accessories">Visors & Intercoms</a></li>
+            <li><a href="collection.html?category=t-shirts">Jacquard T-Shirts</a></li>
+            <li><a href="collection.html?category=track-pants">Nylon Terry Pants</a></li>
+            <li><a href="collection.html?category=shorts">Tactical Shorts</a></li>
+            <li><a href="collection.html">Cric Sox Pro</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-heading">Company</h4>
           <ul class="footer-links">
-            <li><a href="bulk.html">Bulk & Fleet Orders</a></li>
+            <li><a href="bulk.html">Bulk & Team Orders</a></li>
             <li><a href="docs/COMPONENTS.md">Design System Docs</a></li>
-            <li><a href="collection.html">Dealer Locator</a></li>
-            <li><a href="product.html?id=vega-bolt-bunny">Safety Certifications</a></li>
+            <li><a href="docs/PROJECT.md">Project Blueprint</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Stay Connected</h4>
-          <p style="font-size: 13px; margin-bottom: 12px;">Get track updates, new graphic drops, and exclusive community discounts.</p>
-          <div style="display: flex; gap: 8px;">
-            <input type="email" placeholder="Enter your email" class="form-input" style="padding: 0.6rem 0.8rem; font-size: 13px;">
-            <button class="btn btn-primary btn-sm">Join</button>
-          </div>
+          <h4 class="footer-heading">Direct Contact</h4>
+          <p style="font-size: 13px; margin-bottom: 12px; color: var(--frost);">Direct sales desk in Meerut, UP, India.</p>
+          <a href="https://wa.me/919876543210?text=Hi%20Vega%20Sportwear" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">Chat on WhatsApp</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 VEGA Auto Accessories Pvt. Ltd. All rights reserved.</div>
-        <div class="mono">ISI IS:4151 • DOT FMVSS 218 • ECE 22.06</div>
+        <div>&copy; 2026 Vega Sportwear. All rights reserved. Pitch Demo.</div>
+        <div class="mono">Engineered in Meerut • vegasportwear.com</div>
       </div>
     </div>
   </footer>
 
-  <!-- Application Scripts -->
+  <!-- Scripts -->
   <script src="assets/js/data.js"></script>
   <script src="assets/js/tilt.js"></script>
   <script src="assets/js/hero3d.js"></script>
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/app.js"></script>
 
-  <!-- Dynamic Content Initialization -->
+  <!-- Page Specific Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Populate Featured Products (take first 4)
-      const container = document.getElementById('featured-products-container');
+      // 1. Populate Best Sellers (3 tilt cards as specified in PROJECT.md)
+      const container = document.getElementById('best-sellers-grid');
       if (container && window.VEGA_DATA) {
-        const featured = window.VEGA_DATA.products.slice(0, 4);
-        container.innerHTML = featured.map(p => `
+        const bestSellers = window.VEGA_DATA.products.slice(0, 3);
+        container.innerHTML = bestSellers.map(p => `
           <article class="product-card tilt-card" data-tilt data-id="${p.id}">
             <div class="product-badge-group">
               <span class="badge badge-${p.badgeType || 'ignite'}">${p.badge}</span>
@@ -332,7 +317,7 @@
               <img src="${p.image}" alt="${p.name}" loading="lazy">
             </div>
             <div class="card-meta">
-              <span>${p.categoryName.toUpperCase()}</span>
+              <span>${p.categoryName}</span>
               <div class="card-rating">★ <span>${p.rating}</span></div>
             </div>
             <h3 class="card-title">
@@ -353,29 +338,37 @@
           </article>
         `).join('');
 
-        // Re-bind tilt to newly injected elements
         if (window.VegaTilt) window.VegaTilt.init();
       }
 
-      // Populate Racing Teams
-      const teamsContainer = document.getElementById('teams-container');
-      if (teamsContainer && window.VEGA_DATA) {
-        teamsContainer.innerHTML = window.VEGA_DATA.teams.map(t => `
-          <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
-            <div style="height: 220px; overflow: hidden; position: relative;">
-              <img src="${t.image}" alt="${t.name}" style="width: 100%; height: 100%; object-fit: cover;">
-              <div style="position: absolute; inset: 0; background: linear-gradient(to top, #1E1D1F, transparent);"></div>
-            </div>
-            <div style="padding: var(--space-6);">
-              <span class="badge badge-ignite" style="margin-bottom: 8px;">${t.discipline}</span>
-              <h3 style="margin-bottom: 4px;">${t.name}</h3>
-              <p style="font-size: 13px; color: var(--frost); margin-bottom: 12px;">Lead: <strong style="color: var(--brume);">${t.leadRider}</strong> • Helmet: ${t.helmetModel}</p>
-              <blockquote style="font-style: italic; font-size: 14px; border-left: 2px solid var(--ignite); padding-left: 12px; color: var(--frost);">
-                "${t.quote}"
-              </blockquote>
-            </div>
-          </div>
-        `).join('');
+      // 2. Scroll Story Line-by-Line Reveal with GSAP ScrollTrigger
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        const storyLines = document.querySelectorAll('.story-line');
+        storyLines.forEach((line, idx) => {
+          gsap.to(line, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: line,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse'
+            }
+          });
+        });
+
+        // Parallax zoom for Cric Sox
+        gsap.to('#cric-sox-img', {
+          scale: 1.15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.cric-sox-section',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
       }
     });
   </script>

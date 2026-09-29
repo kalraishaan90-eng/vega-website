@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details | VEGA® Performance Helmets</title>
-  <meta name="description" content="Detailed specs, safety certifications, and options for Vega motorcycle gear.">
+  <title>Product Details | Vega Sportwear</title>
+  <meta name="description" content="Authentic Vega Sportwear product specifications, sizing, and direct order options.">
 
   <!-- Core Stylesheets -->
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -12,7 +12,10 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages.css">
 
+  <!-- External Libraries: Lenis, GSAP + ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -20,13 +23,15 @@
   <header class="site-nav">
     <div class="nav-container">
       <a href="index.html" class="nav-brand">
-        VEGA<span class="brand-dot">.</span>
+        <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 34px; width: auto; object-fit: contain;">
+        <span>VEGA<span class="brand-dot">.</span></span>
       </a>
 
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="collection.html" class="nav-link">Collection</a>
-        <a href="bulk.html" class="nav-link">Bulk & Fleet</a>
+        <a href="collection.html?category=shorts" class="nav-link">EXODE</a>
+        <a href="bulk.html" class="nav-link">Bulk Inquiry</a>
       </nav>
 
       <div class="nav-actions">
@@ -45,13 +50,13 @@
   <!-- Product Detail Section -->
   <main class="pdp-section">
     <div class="container" id="pdp-content-container">
-      <!-- Dynamically rendered based on ?id= -->
+      <!-- Dynamically populated from URL ?id= -->
     </div>
 
     <!-- Related Products -->
     <div class="container" style="margin-top: var(--space-16);">
       <div class="flex items-center justify-between" style="margin-bottom: var(--space-6); border-top: 1px solid var(--border-subtle); padding-top: var(--space-10);">
-        <h3>You May Also Equip</h3>
+        <h3>You May Also Like</h3>
         <a href="collection.html" class="btn btn-outline btn-sm">Full Catalog &rarr;</a>
       </div>
       <div class="products-grid" id="related-products-grid"></div>
@@ -78,13 +83,30 @@
     </div>
   </aside>
 
+  <!-- Mobile Sticky Bottom Action Bar -->
+  <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+    <div class="mobile-sticky-bar-info">
+      <span class="mobile-sticky-name" id="sticky-bar-name"></span>
+      <span class="mobile-sticky-price" id="sticky-bar-price"></span>
+    </div>
+    <button class="btn btn-primary btn-sm" id="sticky-bar-add-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <span>Add to Bag</span>
+    </button>
+  </div>
+
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-brand">VEGA<span class="brand-dot">.</span></a>
-          <p>Engineered for maximum rider safety, aerodynamics, and comfort. Belgaum, India.</p>
+          <a href="index.html" class="nav-brand">
+            <img src="assets/img/vega-logo.png" alt="VEGA" style="height: 30px; width: auto; object-fit: contain;">
+            <span>VEGA<span class="brand-dot">.</span></span>
+          </a>
+          <p>Vega Sportwear (Meerut). Engineered for excellence. Powering athletes and international squads worldwide.</p>
         </div>
         <div>
           <h4 class="footer-heading">Navigation</h4>
@@ -97,20 +119,20 @@
         <div>
           <h4 class="footer-heading">Support</h4>
           <ul class="footer-links">
-            <li><a href="#">Size Fitment Guide</a></li>
-            <li><a href="#">Visor Replacement Guide</a></li>
-            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">Size Fitment Chart</a></li>
+            <li><a href="#">Washing Instructions</a></li>
+            <li><a href="#">Exchange Policy</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="footer-heading">B2B & Dealerships</h4>
-          <p style="font-size: 13px; margin-bottom: 12px;">Equip your riding school or logistics fleet.</p>
-          <a href="bulk.html" class="btn btn-outline btn-sm">Explore Bulk Pricing</a>
+          <h4 class="footer-heading">Direct Inquiry</h4>
+          <p style="font-size: 13px; margin-bottom: 12px; color: var(--frost);">Need custom sublimation or team uniforms?</p>
+          <a href="bulk.html" class="btn btn-outline btn-sm">Request Team Quote</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2026 VEGA Auto Accessories Pvt. Ltd. All rights reserved.</div>
-        <div class="mono">Genuine Factory Warranty Included</div>
+        <div>&copy; 2026 Vega Sportwear. All rights reserved.</div>
+        <div class="mono">Engineered In Meerut • Authentic Vega Gear</div>
       </div>
     </div>
   </footer>
@@ -121,20 +143,19 @@
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/app.js"></script>
 
-  <!-- PDP Dynamic Controller -->
+  <!-- PDP Controller -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (!window.VEGA_DATA) return;
 
       const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id') || 'vega-bolt-bunny';
+      const productId = urlParams.get('id') || window.VEGA_DATA.products[0].id;
       const product = window.VEGA_DATA.getProductById(productId) || window.VEGA_DATA.products[0];
 
-      // Update Document Title
-      document.title = `${product.name} | VEGA® Helmets`;
+      document.title = `${product.name} | Vega Sportwear`;
 
       const container = document.getElementById('pdp-content-container');
-      let selectedSize = product.sizes ? product.sizes[0] : 'Standard';
+      let selectedSize = product.sizes ? product.sizes[0] : 'M';
       let selectedColor = product.colors ? product.colors[0].name : 'Default';
       let quantity = 1;
 
@@ -150,21 +171,21 @@
         <div class="pdp-grid">
           <!-- Gallery -->
           <div class="pdp-gallery">
-            <div class="pdp-main-image">
-              <img id="pdp-active-img" src="${product.image}" alt="${product.name}">
+            <div class="pdp-main-image" style="overflow: hidden; cursor: crosshair;">
+              <img id="pdp-active-img" src="${product.image}" alt="${product.name}" style="transition: transform 0.3s ease;">
             </div>
             ${product.images && product.images.length > 1 ? `
               <div class="pdp-thumbnails">
                 ${product.images.map((img, idx) => `
                   <div class="pdp-thumb ${idx === 0 ? 'active' : ''}" data-thumb-src="${img}">
-                    <img src="${img}" alt="${product.name} angle ${idx + 1}" style="width: 100%; height: 100%; object-fit: contain;">
+                    <img src="${img}" alt="${product.name} angle ${idx + 1}" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
                 `).join('')}
               </div>
             ` : ''}
           </div>
 
-          <!-- Product Details -->
+          <!-- Sticky Details & Buy Panel -->
           <div class="pdp-details">
             <div style="display: flex; gap: 8px; margin-bottom: 12px;">
               <span class="badge badge-${product.badgeType || 'ignite'}">${product.badge}</span>
@@ -185,10 +206,10 @@
             <!-- Color Options -->
             ${product.colors ? `
               <div class="variant-picker">
-                <div class="variant-label">Color Finish: <strong id="selected-color-label" style="color: var(--brume);">${selectedColor}</strong></div>
+                <div class="variant-label">Finish: <strong id="selected-color-label" style="color: var(--brume);">${selectedColor}</strong></div>
                 <div style="display: flex; gap: 10px;">
                   ${product.colors.map((c, idx) => `
-                    <button class="color-chip-btn ${idx === 0 ? 'active' : ''}" data-color-name="${c.name}" style="width: 32px; height: 32px; border-radius: 50%; background: ${c.hex}; border: 2px solid ${idx === 0 ? 'var(--ignite)' : 'var(--border-medium)'}; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.4);" title="${c.name}"></button>
+                    <button class="color-chip-btn ${idx === 0 ? 'active' : ''}" data-color-name="${c.name}" style="width: 30px; height: 30px; border-radius: 4px; background: ${c.hex}; border: 2px solid ${idx === 0 ? 'var(--ignite)' : 'var(--border-medium)'}; cursor: pointer;" title="${c.name}"></button>
                   `).join('')}
                 </div>
               </div>
@@ -198,8 +219,8 @@
             ${product.sizes ? `
               <div class="variant-picker">
                 <div class="flex items-center justify-between" style="margin-bottom: 8px;">
-                  <span class="variant-label" style="margin-bottom: 0;">Select Size (Head Circumference)</span>
-                  <a href="#specs-section" style="font-size: 12px; color: var(--ignite); text-decoration: underline;">Size Guide</a>
+                  <span class="variant-label" style="margin-bottom: 0;">Select Size</span>
+                  <a href="#pdp-accordion" style="font-size: 12px; color: var(--ignite); text-decoration: underline;">Size Chart</a>
                 </div>
                 <div class="size-chips">
                   ${product.sizes.map((s, idx) => `
@@ -209,62 +230,88 @@
               </div>
             ` : ''}
 
-            <!-- Quantity & Actions -->
-            <div class="pdp-actions">
-              <div class="qty-control" style="background: var(--graphite); padding: 4px; border-radius: var(--radius-md);">
-                <button class="qty-btn" id="pdp-qty-minus" style="padding: 6px 14px; font-size: 1.1rem;">&minus;</button>
-                <span class="qty-value" id="pdp-qty-val" style="padding: 0 12px; font-size: 1rem;">1</span>
-                <button class="qty-btn" id="pdp-qty-plus" style="padding: 6px 14px; font-size: 1.1rem;">&plus;</button>
+            <!-- Actions: Add to Cart + WhatsApp button with prefilled message -->
+            <div class="pdp-actions" style="flex-direction: column; gap: 12px;">
+              <div style="display: flex; gap: 12px;">
+                <div class="qty-control" style="background: var(--graphite); padding: 4px; border-radius: var(--radius-sm);">
+                  <button class="qty-btn" id="pdp-qty-minus" style="padding: 6px 14px; font-size: 1.1rem;">&minus;</button>
+                  <span class="qty-value" id="pdp-qty-val" style="padding: 0 12px; font-size: 1rem;">1</span>
+                  <button class="qty-btn" id="pdp-qty-plus" style="padding: 6px 14px; font-size: 1.1rem;">&plus;</button>
+                </div>
+
+                <button class="btn btn-primary btn-lg" id="pdp-add-cart-btn" style="flex: 1;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                  <span>Add to Gear Bag</span>
+                </button>
               </div>
 
-              <button class="btn btn-primary btn-lg" id="pdp-add-cart-btn" style="flex: 1;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              <!-- WhatsApp Direct Order Button (Prefilled message) -->
+              <a id="whatsapp-order-btn" class="btn btn-whatsapp w-full" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.115-.527-1.745-.722-2.868-2.484-2.955-2.6-.086-.115-.718-.955-.718-1.821 0-.866.453-1.292.614-1.468.161-.176.353-.22.47-.22.118 0 .235.001.338.006.109.005.255-.041.398.303.144.348.491 1.2.535 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289-.086.102-.181.228-.259.306-.086.086-.176.18-.076.352.1.172.443.731.951 1.184.654.583 1.206.764 1.378.85.172.086.273.072.375-.044.101-.116.433-.505.549-.678.115-.173.231-.144.389-.086.158.058 1.008.475 1.181.562.173.086.288.13.331.202.044.072.044.418-.1 1.823z"/>
                 </svg>
-                <span>Add to Gear Bag</span>
-              </button>
+                <span>Order via WhatsApp (Instant Dispatch)</span>
+              </a>
             </div>
 
-            <!-- Description -->
-            <div style="margin-top: var(--space-6); border-top: 1px solid var(--border-subtle); padding-top: var(--space-6);">
-              <h4 style="margin-bottom: 8px;">Engineering Brief</h4>
-              <p style="font-size: 14px; line-height: 1.7;">${product.description}</p>
-            </div>
+            <!-- Details Accordion -->
+            <div id="pdp-accordion" style="margin-top: var(--space-8); border-top: 1px solid var(--border-subtle); padding-top: var(--space-6);">
+              <details open style="margin-bottom: 16px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px; cursor: pointer;">
+                <summary style="font-weight: bold; font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase;">
+                  Fabric & Performance Highlights
+                </summary>
+                <div style="margin-top: 10px; font-size: 14px; line-height: 1.6;">
+                  <p style="margin-bottom: 10px;">${product.description}</p>
+                  <ul style="display: flex; flex-direction: column; gap: 6px;">
+                    ${product.features.map(f => `
+                      <li style="display: flex; align-items: center; gap: 8px; color: var(--frost); font-size: 13px;">
+                        <span style="color: var(--ignite);">✓</span> <span>${f}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              </details>
 
-            <!-- Features -->
-            <div style="margin-top: var(--space-6);">
-              <h4 style="margin-bottom: 12px;">Track Highlights</h4>
-              <ul style="display: flex; flex-direction: column; gap: 8px;">
-                ${product.features.map(f => `
-                  <li style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--frost);">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FE492A" stroke-width="2.5">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>${f}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
+              <details style="margin-bottom: 16px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px; cursor: pointer;">
+                <summary style="font-weight: bold; font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase;">
+                  Specifications & Material
+                </summary>
+                <table class="tech-specs-table" style="margin-top: 10px;">
+                  <tbody>
+                    ${Object.entries(product.specs || {}).map(([key, val]) => `
+                      <tr>
+                        <td>${key}</td>
+                        <td style="color: var(--brume);">${val}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </details>
 
-            <!-- Specs Table -->
-            <div id="specs-section" style="margin-top: var(--space-8); border-top: 1px solid var(--border-subtle); padding-top: var(--space-6);">
-              <h4 style="margin-bottom: 12px;">Technical Specifications</h4>
-              <table class="tech-specs-table">
-                <tbody>
-                  ${Object.entries(product.specs || {}).map(([key, val]) => `
-                    <tr>
-                      <td>${key}</td>
-                      <td style="color: var(--brume);">${val}</td>
-                    </tr>
-                  `).join('')}
-                </tbody>
-              </table>
+              <details style="padding-bottom: 12px; cursor: pointer;">
+                <summary style="font-weight: bold; font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase;">
+                  Shipping & Free Exchanges
+                </summary>
+                <p style="margin-top: 10px; font-size: 13px; color: var(--frost);">
+                  All orders shipped within 24 hours directly from our Meerut factory hub. Free 7-day size replacement guarantee if the fit is not 100% perfect.
+                </p>
+              </details>
             </div>
           </div>
         </div>
       `;
 
-      // Thumbnail click interaction
+      // Update WhatsApp URL helper
+      function updateWhatsAppLink() {
+        const text = encodeURIComponent(`Hi Vega Sportwear, I would like to order: ${product.name} (Size: ${selectedSize}, Finish: ${selectedColor}, Qty: ${quantity}) at ₹${product.price * quantity}`);
+        const waBtn = document.getElementById('whatsapp-order-btn');
+        if (waBtn) waBtn.href = `https://wa.me/919876543210?text=${text}`;
+      }
+      updateWhatsAppLink();
+
+      // Thumbnail clicks
       container.querySelectorAll('.pdp-thumb').forEach(thumb => {
         thumb.addEventListener('click', () => {
           container.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
@@ -273,6 +320,22 @@
           document.getElementById('pdp-active-img').src = newSrc;
         });
       });
+
+      // Hover zoom effect on main image
+      const mainImg = document.getElementById('pdp-active-img');
+      const imgBox = mainImg?.parentElement;
+      if (imgBox && mainImg) {
+        imgBox.addEventListener('mousemove', (e) => {
+          const rect = imgBox.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width * 100;
+          const y = (e.clientY - rect.top) / rect.height * 100;
+          mainImg.style.transformOrigin = `${x}% ${y}%`;
+          mainImg.style.transform = 'scale(1.4)';
+        });
+        imgBox.addEventListener('mouseleave', () => {
+          mainImg.style.transform = 'scale(1)';
+        });
+      }
 
       // Color chips
       container.querySelectorAll('.color-chip-btn').forEach(btn => {
@@ -285,6 +348,7 @@
           btn.style.borderColor = 'var(--ignite)';
           selectedColor = btn.getAttribute('data-color-name');
           document.getElementById('selected-color-label').textContent = selectedColor;
+          updateWhatsAppLink();
         });
       });
 
@@ -294,6 +358,7 @@
           container.querySelectorAll('.size-chip').forEach(c => c.classList.remove('selected'));
           chip.classList.add('selected');
           selectedSize = chip.getAttribute('data-size');
+          updateWhatsAppLink();
         });
       });
 
@@ -303,15 +368,18 @@
         if (quantity > 1) {
           quantity--;
           qtyVal.textContent = quantity;
+          updateWhatsAppLink();
         }
       });
       document.getElementById('pdp-qty-plus')?.addEventListener('click', () => {
         quantity++;
         qtyVal.textContent = quantity;
+        updateWhatsAppLink();
       });
 
-      // Add to Cart button
-      document.getElementById('pdp-add-cart-btn')?.addEventListener('click', () => {
+      // Add to Cart
+      const addCartBtn = document.getElementById('pdp-add-cart-btn');
+      addCartBtn?.addEventListener('click', () => {
         window.cartStore.addItem(product.id, {
           size: selectedSize,
           color: selectedColor,
@@ -319,7 +387,46 @@
         });
       });
 
-      // Render Related Products
+      // Mobile Sticky Quick Add Bar
+      const stickyBar = document.getElementById('mobile-sticky-bar');
+      const stickyName = document.getElementById('sticky-bar-name');
+      const stickyPrice = document.getElementById('sticky-bar-price');
+      const stickyAddBtn = document.getElementById('sticky-bar-add-btn');
+
+      if (stickyBar && stickyName && stickyPrice && stickyAddBtn) {
+        stickyName.textContent = product.name;
+        stickyPrice.textContent = `₹${product.price.toLocaleString('en-IN')}`;
+
+        stickyAddBtn.addEventListener('click', () => {
+          if (addCartBtn) {
+            addCartBtn.click();
+          } else {
+            window.cartStore.addItem(product.id, {
+              size: selectedSize,
+              color: selectedColor,
+              qty: quantity
+            });
+          }
+        });
+
+        const checkScroll = () => {
+          if (window.innerWidth <= 900 && addCartBtn) {
+            const rect = addCartBtn.getBoundingClientRect();
+            if (rect.bottom < 60) {
+              stickyBar.classList.add('visible');
+            } else {
+              stickyBar.classList.remove('visible');
+            }
+          } else {
+            stickyBar.classList.remove('visible');
+          }
+        };
+
+        window.addEventListener('scroll', checkScroll, { passive: true });
+        window.addEventListener('resize', checkScroll, { passive: true });
+      }
+
+      // Related Products Grid
       const relatedGrid = document.getElementById('related-products-grid');
       if (relatedGrid) {
         const related = window.VEGA_DATA.products.filter(p => p.id !== product.id).slice(0, 3);
@@ -332,7 +439,7 @@
               <img src="${p.image}" alt="${p.name}" loading="lazy">
             </div>
             <div class="card-meta">
-              <span>${p.categoryName.toUpperCase()}</span>
+              <span>${p.categoryName}</span>
               <div class="card-rating">★ <span>${p.rating}</span></div>
             </div>
             <h3 class="card-title">

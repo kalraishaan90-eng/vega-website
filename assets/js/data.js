@@ -1,428 +1,620 @@
 /**
- * VEGA REDESIGN - CENTRAL DATA STORE
- * Products, Categories, Racing Teams, and Specs
+ * VEGA SPORTWEAR - CENTRAL DATA STORE
+ * Authentic products, categories, specs, and athlete reviews
+ * Sourced directly from Vega Sportwear (Meerut, India) catalog
  */
 
 const VEGA_DATA = {
+  brand: {
+    name: "Vega Sportwear",
+    tagline: "Engineered For Supreme Athletic Velocity",
+    location: "Meerut, Uttar Pradesh, India",
+    address: "C-163, First Floor, Major Dhyanchand Nagar, Delhi Road, Meerut-250002 (U.P.), India",
+    phone: "+91 6398204040",
+    email: "vega.industries26@gmail.com",
+    established: "Meerut Sports Hub"
+  },
+
   categories: [
-    { id: 'all', name: 'All Gear', slug: 'all', count: 10 },
-    { id: 'full-face', name: 'Full Face', slug: 'full-face', count: 3, image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80' },
-    { id: 'modular', name: 'Modular Flip-Up', slug: 'modular', count: 1, image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80' },
-    { id: 'off-road', name: 'Off-Road & MX', slug: 'off-road', count: 1, image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80' },
-    { id: 'open-face', name: 'Open Face Urban', slug: 'open-face', count: 1, image: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=600&q=80' },
-    { id: 'gear', name: 'Apparel & Armor', slug: 'gear', count: 2, image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80' },
-    { id: 'accessories', name: 'Visors & Tech', slug: 'accessories', count: 2, image: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=600&q=80' }
+    { id: 'all', name: 'All Gear', slug: 'all', count: 12 },
+    { id: 'tees', name: 'Tees & Tops', slug: 'tees', count: 4, image: 'assets/img/jacquard-texture-round-neck-t-shirt-1-1.webp' },
+    { id: 'shorts', name: 'Bottoms & Shorts', slug: 'shorts', count: 3, image: 'assets/img/exode-tactical-shorts-sh-cl-483-1.webp' },
+    { id: 'pants', name: 'Track Pants & Joggers', slug: 'pants', count: 2, image: 'assets/img/nylon-terry-track-pants-lw-nt-1284-1.webp' },
+    { id: 'cricket', name: 'Cricket & Teamwear', slug: 'cricket', count: 2, image: 'assets/img/cric-sox-1-1.jpg' },
+    { id: 'jackets', name: 'Jackets & Outerwear', slug: 'jackets', count: 1, image: 'assets/img/jackets-1.webp' }
   ],
 
   products: [
     {
-      id: 'vega-bolt-bunny',
-      name: 'Vega Bolt Bunny Edition',
-      category: 'full-face',
-      categoryName: 'Full Face',
-      tagline: 'Track aerodynamic pedigree with high-velocity street attitude.',
-      price: 2850,
-      originalPrice: 3499,
+      id: 'jacquard-texture-round-neck-t-shirt-tck-106',
+      name: 'VEGA Jacquard AeroKnit Training Tee (TCK 104)',
+      category: 'tees',
+      categoryName: 'Tees & Tops',
+      tagline: 'Precision engineered jacquard texture knit for maximum moisture transport.',
+      price: 610,
+      originalPrice: 899,
       rating: 4.9,
-      reviewsCount: 428,
+      reviewsCount: 142,
       badge: 'Best Seller',
       badgeType: 'ignite',
-      image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80',
+      image: 'assets/img/jacquard-texture-round-neck-t-shirt-tck-106-1.webp',
       images: [
-        'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80',
-        'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=700&q=80',
-        'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=700&q=80'
+        'assets/img/jacquard-texture-round-neck-t-shirt-tck-106-1.webp',
+        'assets/img/jacquard-texture-round-neck-t-shirt-tck-106-2.webp',
+        'assets/img/jacquard-texture-round-neck-t-shirt-tck-106-3.webp',
+        'assets/img/jacquard-texture-round-neck-t-shirt-1-1.webp'
       ],
       colors: [
-        { name: 'Matte Obsidian / Ignite Orange', hex: '#FE492A' },
-        { name: 'Amarante Crimson', hex: '#2C0C14' },
-        { name: 'Stealth Graphite', hex: '#1E1D1F' }
+        { name: 'Dark Sky Navy', hex: '#1C2833' },
+        { name: 'Light Tactical Green', hex: '#6E8B3D' },
+        { name: 'Graphite Dark Gray', hex: '#2C3E50' }
       ],
-      sizes: ['M (57-58cm)', 'L (59-60cm)', 'XL (61-62cm)'],
-      description: 'The Bolt Bunny brings race-developed aerodynamics into an aggressively styled shell. Equipped with dual-density EPS liner, high-impact polycarbonate shell, integrated rear exhaust spoiler, and optical grade scratch-resistant quick-release visor.',
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'Elevate your everyday training and competition with the VEGA Jacquard Texture Round Neck T-Shirt. Crafted in our Meerut facility from high-density jacquard knit fabric, it features a zoned micro-mesh texture that accelerates evaporative cooling while delivering an aggressive, streamlined silhouette.',
       features: [
-        'ISI (IS:4151) and DOT FMVSS No. 218 Certified',
-        'Dual-density EPS inner liner with channeled airflow',
-        'Aero-tuned rear drag-reduction spoiler',
-        'Quick release micrometric buckle system',
-        'Removable, washable antibacterial comfort padding'
+        'Premium Jacquard micro-textured performance knit',
+        'Zoned moisture-transport grid for rapid cooling',
+        'Athletic taper with 4-way unrestricted stretch',
+        'Anti-friction flatlock stitching to eliminate chafing',
+        'Anti-microbial silver-ion odor resistance',
+        'Engineered & manufactured in Meerut, India'
       ],
       specs: {
-        'Weight': '1350 ± 50g',
-        'Shell Material': 'High Impact Engineered Thermoplastic ABS',
-        'Visor': 'Optically Correct Polycarbonate with UV400 Protection',
-        'Certifications': 'ISI Certified & DOT Approved',
-        'Ventilation': '1 Chin Vent, 2 Top Air Scoops, 1 Rear Exhaust Extractor',
-        'Origin': 'Belgaum, India'
+        'Fabric Composition': '92% Performance Micro-Polyester, 8% Spandex',
+        'Fabric Weight': '180 GSM Jacquard Weave',
+        'Moisture Rating': 'AeroDri™ Quick-Dry Level 4',
+        'Fit': 'Athletic Slim Fit (True to Size)',
+        'Recommended For': 'Gym Training, Running, Cricket Practice, High-Intensity Workouts',
+        'Manufacturing': 'Vega Industries, Meerut'
       }
     },
     {
-      id: 'vega-torq-carbon',
-      name: 'Vega Torq Pro Carbon',
-      category: 'full-face',
-      categoryName: 'Full Face',
-      tagline: 'Ultralight 3K carbon weave engineered for pure supersport precision.',
-      price: 6499,
-      originalPrice: 7999,
+      id: 'nylon-terry-track-pants-lw-nt-1284',
+      name: 'VEGA Pro Nylon Terry Performance Track Pants (LW/NT/1282)',
+      category: 'pants',
+      categoryName: 'Track Pants & Joggers',
+      tagline: 'Heavyweight thermal-regulation nylon terry with sculpted athletic taper.',
+      price: 1199,
+      originalPrice: 1699,
       rating: 5.0,
-      reviewsCount: 182,
-      badge: 'Pro Racing',
+      reviewsCount: 98,
+      badge: 'Pro Tier',
       badgeType: 'amarante',
-      image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=700&q=80',
+      image: 'assets/img/nylon-terry-track-pants-lw-nt-1284-1.webp',
       images: [
-        'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=700&q=80',
-        'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80'
+        'assets/img/nylon-terry-track-pants-lw-nt-1284-1.webp',
+        'assets/img/nylon-terry-track-pants-lw-nt-1284-2.webp',
+        'assets/img/nylon-terry-track-pants-lw-nt-1284-3.webp',
+        'assets/img/nylon-terry-track-pants-1-1.webp'
       ],
       colors: [
-        { name: 'Raw 3K Gloss Carbon', hex: '#1E1D1F' },
-        { name: 'Ignite Red Race Stripe', hex: '#FE492A' }
+        { name: 'Tactical Olive', hex: '#4B5320' },
+        { name: 'Midnight Navy', hex: '#0B132B' },
+        { name: 'Matte Stealth Black', hex: '#1A1A1A' },
+        { name: 'Sandstone Beige', hex: '#C2B280' }
       ],
-      sizes: ['S (55-56cm)', 'M (57-58cm)', 'L (59-60cm)', 'XL (61-62cm)'],
-      description: 'The pinnacle of Vega lightweight engineering. Built with aerospace-grade 3K carbon composite fiber, emergency quick-release cheek pads, and wind-tunnel sculpted air channels delivering zero neck fatigue at 200+ km/h.',
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'Engineered for cold-weather warmups, sideline travel, and heavy strength sessions. Crafted with Vega premium high-density Nylon Terry with a double-knit exterior and loop-back interior that traps warm air while actively breathing during intense exertion.',
       features: [
-        'ECE 22.06 and DOT Homologated',
-        'Full 3K autoclaved carbon fiber outer shell',
-        'Pinlock 70 MaxVision anti-fog ready visor included',
-        'Emergency cheek-pad quick release straps',
-        'Double D-Ring titanium alloy retention'
+        'High-density Nylon French Terry exterior with moisture loop-back',
+        'Deep side zip pockets with water-resistant taping',
+        'Ribbed ergonomic ankle cuffs for zero drag',
+        'Custom heavy-duty drawstring with matte silicone dipped ends',
+        'Reinforced gusseted crotch for full squat depth mobility'
       ],
       specs: {
-        'Weight': '1180 ± 30g',
-        'Shell Material': 'Aerospace Grade 3K Carbon Fiber Matrix',
-        'Visor': 'Class 1 Optical Pinlock 70 MaxVision Ready',
-        'Certifications': 'ECE 22.06 & DOT FMVSS 218',
-        'Ventilation': 'Venturi Ram-Air 4-Port Circuit',
-        'Origin': 'Belgaum, India'
+        'Fabric Composition': '88% High-Tenacity Nylon, 12% Terry Elastane',
+        'Fabric Weight': '290 GSM Heavyweight Terry',
+        'Hardware': 'YKK Concealed Reverse Zippers',
+        'Waistband': 'Elasticated with Reinforced Drawcord',
+        'Fit': 'Tapered Athletic Fit',
+        'Origin': 'Vega Manufacturing Hub, Meerut'
       }
     },
     {
-      id: 'vega-cliff-noir',
-      name: 'Vega Cliff Minimalist',
-      category: 'full-face',
-      categoryName: 'Full Face',
-      tagline: 'Timeless urban clean aesthetics with dependable everyday protection.',
-      price: 1350,
-      originalPrice: 1599,
-      rating: 4.7,
-      reviewsCount: 890,
-      badge: 'Everyday Icon',
-      badgeType: 'outline',
-      image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=80',
-      images: [
-        'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=80'
-      ],
-      colors: [
-        { name: 'Satin Matte Black', hex: '#0E0D0E' },
-        { name: 'Titanium Frost', hex: '#AEB8CF' }
-      ],
-      sizes: ['M (57-58cm)', 'L (59-60cm)'],
-      description: 'Indias most popular urban commuter full-face helmet. Crafted with lightweight aerodynamic ABS, silent chin strap buckle, and high-clarity scratch-resistant clear visor.',
-      features: [
-        'ISI Certified IS:4151',
-        'Compact shell profile fits under most scooter storage',
-        'Quick detach visor mechanism without tools',
-        'Breathable and sweat-wicking cheek liners'
-      ],
-      specs: {
-        'Weight': '1050 ± 40g',
-        'Shell Material': 'Impact Resistant ABS',
-        'Visor': 'Clear Optical Grade Polycarbonate',
-        'Certifications': 'ISI IS:4151',
-        'Ventilation': 'Forehead slide scoop and chin intake',
-        'Origin': 'Belgaum, India'
-      }
-    },
-    {
-      id: 'vega-crux-flipup',
-      name: 'Vega Crux Modular Touring',
-      category: 'modular',
-      categoryName: 'Modular Flip-Up',
-      tagline: 'Dual homologated touring helmet with effortless single-button flip chin guard.',
-      price: 2490,
-      originalPrice: 2899,
+      id: 'exode-tactical-shorts-sh-cl-483',
+      name: 'VEGA EXODE Tactical Multi-Pocket Shorts (SH/CL/481)',
+      category: 'shorts',
+      categoryName: 'Bottoms & Shorts',
+      tagline: 'Rugged ripstop utility paired with zero-restriction gym flexibility.',
+      price: 1149,
+      originalPrice: 1499,
       rating: 4.8,
-      reviewsCount: 345,
-      badge: 'Touring',
-      badgeType: 'outline',
-      image: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80',
-      images: [
-        'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80'
-      ],
-      colors: [
-        { name: 'Graphite Grey / Red', hex: '#1E1D1F' },
-        { name: 'Pearl White Metallic', hex: '#F4F2EE' }
-      ],
-      sizes: ['M (57-58cm)', 'L (59-60cm)', 'XL (61-62cm)'],
-      description: 'Built for mile-munchers who demand open-face freedom at toll booths and full-face armor on expressways. Features an internal drop-down smoked sun shield.',
-      features: [
-        'Dual P/J homologation for open and closed riding',
-        'Integrated internal drop-down UV sun visor',
-        'Single-button metal locking chin bar mechanism',
-        'Eyewear glasses groove for spectacle wearers'
-      ],
-      specs: {
-        'Weight': '1550 ± 50g',
-        'Shell Material': 'High Density Thermo Polymer',
-        'Visor': 'Dual Visor System (Clear + Smoke drop-down)',
-        'Certifications': 'ISI & DOT',
-        'Ventilation': 'Multi-stage flow-through ventilation',
-        'Origin': 'Belgaum, India'
-      }
-    },
-    {
-      id: 'vega-offroad-dakar',
-      name: 'Vega Off-Road Dakar Peak',
-      category: 'off-road',
-      categoryName: 'Off-Road & MX',
-      tagline: 'Aggressive motocross styling built for gravel, mud, and extreme enduro trails.',
-      price: 2650,
-      originalPrice: 3100,
-      rating: 4.9,
-      reviewsCount: 210,
-      badge: 'Rally',
+      reviewsCount: 86,
+      badge: 'Tactical Series',
       badgeType: 'ignite',
-      image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=700&q=80',
+      image: 'assets/img/exode-tactical-shorts-sh-cl-483-1.webp',
       images: [
-        'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=700&q=80'
+        'assets/img/exode-tactical-shorts-sh-cl-483-1.webp',
+        'assets/img/exode-tactical-shorts-sh-cl-483-2.webp',
+        'assets/img/exode-tactical-shorts-sh-cl-483-3.webp',
+        'assets/img/exode-tactical-shorts-sh-cl-481-1.webp'
       ],
       colors: [
-        { name: 'Toxic Ignite Orange', hex: '#FE492A' },
-        { name: 'Matte Stealth Camo', hex: '#1E1D1F' }
+        { name: 'Obsidian Black', hex: '#111111' },
+        { name: 'Deep Navy', hex: '#1A2530' },
+        { name: 'Coyote Brown', hex: '#5C4033' },
+        { name: 'Desert Beige', hex: '#D2B48C' }
       ],
-      sizes: ['M (57-58cm)', 'L (59-60cm)'],
-      description: 'Engineered for extreme off-road enthusiasts. Extra-wide eye port accommodates all standard MX goggles with anti-slip silicone strap channels and aerodynamic roost peak.',
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'The EXODE Tactical Shorts bridge raw durability and elite sportswear ergonomics. Designed with abrasion-resistant textured weave, strategic cargo utility compartments, and flexible waistband to endure tactical training, crossfit, and outdoor athletics.',
       features: [
-        'Adjustable and aerodynamic sun/mud peak',
-        'High-flow mouth vent with removable foam dust filter',
-        'Goggle strap alignment guide ribs',
-        'Sweat-wicking removable Coolmax liner'
+        'Abrasion-resistant lightweight tactical woven shell',
+        'Dual magnetic cargo compartments + secure rear zip pocket',
+        '4-way flex mechanical stretch across stress points',
+        'Water-shedding DWR coating for outdoor training',
+        'Engineered waistband with anti-slip silicone interior gripper'
       ],
       specs: {
-        'Weight': '1380 ± 50g',
-        'Shell Material': 'Reinforced Impact-Grade ABS',
-        'Visor': 'Wide Eyeport (Goggle Ready)',
-        'Certifications': 'ISI IS:4151 Certified',
-        'Ventilation': 'High-volume dirt roost mouth intake & brow vents',
-        'Origin': 'Belgaum, India'
+        'Shell Fabric': '90% Cordura-Blend Nylon, 10% Elastane',
+        'Inseam Length': '7.5 Inches (Above Knee Athletic Cut)',
+        'Storage': '5 Tactical Pockets with Bar-Tack Reinforcement',
+        'Pockets': 'Dual Utility Cargo + 2 Hand Slits + 1 Security Zip',
+        'Origin': 'Vega Meerut Facility'
       }
     },
     {
-      id: 'vega-atom-open',
-      name: 'Vega Atom Cruiser Jet',
-      category: 'open-face',
-      categoryName: 'Open Face Urban',
-      tagline: 'Retro café-racer spirit infused with modern safety and drop-down pilot visor.',
-      price: 1750,
-      originalPrice: 2050,
-      rating: 4.6,
+      id: 'performance-shorts-with-inner-tights-sh-ly-1278',
+      name: 'VEGA 2-in-1 Hybrid Shorts + Compression Tights (SH/LY/1277)',
+      category: 'shorts',
+      categoryName: 'Bottoms & Shorts',
+      tagline: 'Dual-layer performance engineering: featherweight outer + muscle-stabilizing inner tight.',
+      price: 670,
+      originalPrice: 999,
+      rating: 4.9,
       reviewsCount: 164,
-      badge: 'Classic',
-      badgeType: 'outline',
-      image: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=700&q=80',
-      images: [
-        'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=700&q=80'
-      ],
-      colors: [
-        { name: 'Amarante Wine Gloss', hex: '#2C0C14' },
-        { name: 'Ivory Frost', hex: '#F4F2EE' }
-      ],
-      sizes: ['M (57-58cm)', 'L (59-60cm)'],
-      description: 'Cruiser and scrambler open-face helmet featuring leather-stitched trim details and retractable aviator-style optical lens.',
-      features: [
-        'Hand-stitched leatherette interior edge lining',
-        'Concealed aviator drop-down sun visor',
-        'Rear leather goggle retainer strap',
-        'Quick-snap micrometric chin strap'
-      ],
-      specs: {
-        'Weight': '980 ± 30g',
-        'Shell Material': 'Lightweight ABS',
-        'Visor': 'Retractable Aviation Smoke Lens',
-        'Certifications': 'ISI IS:4151',
-        'Ventilation': 'Open-ear acoustic profile',
-        'Origin': 'Belgaum, India'
-      }
-    },
-    {
-      id: 'vega-apex-jacket',
-      name: 'Vega Apex Cordura All-Weather Jacket',
-      category: 'gear',
-      categoryName: 'Apparel & Armor',
-      tagline: 'Heavy-duty 600D Cordura chassis loaded with CE Level 2 armor at back, shoulders, and elbows.',
-      price: 4950,
-      originalPrice: 5999,
-      rating: 4.9,
-      reviewsCount: 95,
-      badge: 'CE Level 2',
+      badge: 'Athlete Pick',
       badgeType: 'ignite',
-      image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=80',
+      image: 'assets/img/performance-shorts-with-inner-tights-sh-ly-1278-1.webp',
       images: [
-        'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=80'
+        'assets/img/performance-shorts-with-inner-tights-sh-ly-1278-1.webp',
+        'assets/img/performance-shorts-with-inner-tights-sh-ly-1278-2.webp',
+        'assets/img/performance-shorts-with-inner-tights-sh-ly-1278-3.webp'
       ],
       colors: [
-        { name: 'Graphite / Ignite Accents', hex: '#FE492A' },
-        { name: 'Stealth Triple Black', hex: '#0E0D0E' }
+        { name: 'Stealth Black / Ignite Inner', hex: '#141414' },
+        { name: 'Navy Blue / Charcoal Inner', hex: '#182436' }
       ],
-      sizes: ['S (38)', 'M (40)', 'L (42)', 'XL (44)', 'XXL (46)'],
-      description: 'Designed for Indian highway conditions and sudden monsoon downpours. Includes removable thermal liner and standalone 100% waterproof rain layer.',
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'The definitive training short. Features an ultralight perforated outer layer that floats without clinging, combined with an integrated graduated-compression spandex liner that supports hamstrings and quads during explosive sprints and deep squats.',
       features: [
-        'CE Level 2 certified protectors at spine, shoulders, elbows',
-        'Heavy-duty 600D abrasion-resistant Cordura textile',
-        '3-in-1 modular system (Mesh + Rain Layer + Thermal Quilt)',
-        '3M Scotchlite reflective piping for night visibility'
+        'Integrated 4-way compression inner tight with anti-chafing glide',
+        'Built-in phone sleeve on compression liner prevents bounce',
+        'Perforated laser-cut ventilation zones along outer thighs',
+        'Towel / shirt loop integrated into rear waistband',
+        '360° reflective micro-accents for early morning / night training'
       ],
       specs: {
-        'Weight': '2100g',
-        'Shell Material': '600D Cordura & High-Flow 3D Mesh',
-        'Protection': 'CE Level 2 EN 1621-1 & EN 1621-2',
-        'Waterproofing': 'Removable 5000mm Hydrostatic Rain Liner',
-        'Origin': 'Belgaum, India'
+        'Outer Shell': '88% Ultra-Light AeroPolyester, 12% Elastane',
+        'Inner Liner': '82% High-Power Spandex Compression Jersey',
+        'Inseam': '6.5 Inch Outer / 8 Inch Liner',
+        'Features': 'Bounce-Free Phone Liner Pocket & Towel Loop',
+        'Origin': 'Vega Meerut'
       }
     },
     {
-      id: 'vega-carbon-gloves',
-      name: 'Vega Apex Carbon Gauntlet Gloves',
-      category: 'gear',
-      categoryName: 'Apparel & Armor',
-      tagline: 'Full gauntlet goat-skin leather with real carbon-fiber knuckle impact shielding.',
-      price: 1950,
-      originalPrice: 2499,
-      rating: 4.8,
-      reviewsCount: 130,
-      badge: 'Track Ready',
+      id: 'exode-mud-motion-relaxed-fit-terry-tee',
+      name: 'VEGA EXODE Mud & Motion Heavyweight Terry Tee',
+      category: 'tees',
+      categoryName: 'Tees & Tops',
+      tagline: 'Heavyweight 260 GSM French Terry with dropped-shoulder luxury drape.',
+      price: 1799,
+      originalPrice: 2299,
+      rating: 5.0,
+      reviewsCount: 67,
+      badge: 'Luxury Drop',
       badgeType: 'amarante',
-      image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80',
+      image: 'assets/img/exode-mud-motion-relaxed-fit-terry-tee-1.jpg',
       images: [
-        'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80'
+        'assets/img/exode-mud-motion-relaxed-fit-terry-tee-1.jpg',
+        'assets/img/exode-mud-motion-relaxed-fit-terry-tee-2.jpg',
+        'assets/img/exode-mud-motion-relaxed-fit-terry-tee-3.jpg'
       ],
       colors: [
-        { name: 'Black / Ignite Red', hex: '#FE492A' }
+        { name: 'Olive Drab', hex: '#556B2F' },
+        { name: 'Natural Sand Beige', hex: '#E1C699' },
+        { name: 'Pitch Black', hex: '#0D0D0D' },
+        { name: 'Optic Off-White', hex: '#F5F5F0' }
       ],
-      sizes: ['M', 'L', 'XL'],
-      description: 'Track-ready gauntlet gloves offering complete wrist and scaphoid protection. Touchscreen conductive tips on index and thumb.',
+      sizes: ['M', 'L', 'XL', 'XXL'],
+      description: 'A heavyweight luxury sportswear staple. Designed with custom-milled 260 GSM combed cotton French Terry that holds a boxy, powerful silhouette. Finished with high-density tactile silicone branding and pre-shrunk wash for enduring durability.',
       features: [
-        'Full grain premium goat skin leather palm',
-        'Real molded carbon fiber knuckle guards',
-        'TPU palm sliders and finger air scoops',
-        'Touchscreen compatible fingertip conductors'
+        '260 GSM custom-knit combed cotton French Terry',
+        'Structured dropped-shoulder boxy athlete fit',
+        'Ribbed 1.25" neck collar that retains shape after 100+ washes',
+        'High-density raised silicone graphic print',
+        'Custom enzyme washed for ultra-soft hand feel'
       ],
       specs: {
-        'Weight': '280g',
-        'Material': 'Top-Grain Goat Leather & Carbon Fiber',
-        'Protection': 'TPU Scaphoid Slider + Carbon Knuckle',
-        'Certifications': 'CE EN 13594:2015 Level 1 KP',
-        'Origin': 'Belgaum, India'
+        'Fabric': '100% Combed Compact Yarn French Terry',
+        'Weight': '260 GSM Heavyweight',
+        'Fit': 'Oversized / Boxy Relaxed Fit',
+        'Care': 'Machine wash cold inside out, lay flat to dry',
+        'Origin': 'Vega Meerut Custom Mill'
       }
     },
     {
-      id: 'vega-intercom-mesh',
-      name: 'Vega Synq 5.3 Mesh Intercom',
-      category: 'accessories',
-      categoryName: 'Visors & Tech',
-      tagline: 'Up to 1.2km multi-rider mesh intercom with active noise cancellation and JBL-tuned drivers.',
-      price: 3890,
-      originalPrice: 4500,
+      id: 'exode-life-is-a-journey-relaxed-fit-tee',
+      name: 'VEGA EXODE "Journey" Heavyweight Graphic Tee',
+      category: 'tees',
+      categoryName: 'Tees & Tops',
+      tagline: 'High-density athlete heavyweight tee featuring signature journey typographics.',
+      price: 1799,
+      originalPrice: 2299,
       rating: 4.9,
-      reviewsCount: 78,
-      badge: 'Tech',
+      reviewsCount: 54,
+      badge: 'Limited Run',
       badgeType: 'ignite',
-      image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=700&q=80',
+      image: 'assets/img/exode-life-is-a-journey-relaxed-fit-tee-1.jpg',
       images: [
-        'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=700&q=80'
+        'assets/img/exode-life-is-a-journey-relaxed-fit-tee-1.jpg',
+        'assets/img/exode-life-is-a-journey-relaxed-fit-tee-2.jpg',
+        'assets/img/exode-life-is-a-journey-relaxed-fit-tee-3.jpg'
       ],
       colors: [
-        { name: 'Matte Obsidian', hex: '#1E1D1F' }
+        { name: 'Raw Sand Beige', hex: '#D7C4A5' },
+        { name: 'Pitch Black', hex: '#111111' },
+        { name: 'Army Olive', hex: '#4A5320' },
+        { name: 'Clean White', hex: '#FFFFFF' }
       ],
-      sizes: ['Universal Helmet Mount'],
-      description: 'Universal clamp intercom engineered to fit into all Vega EPS speaker cutouts. Seamless Bluetooth 5.3 with crystal clear voice even at 120 km/h with visor open.',
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'Constructed for athletes whose lifestyle extends beyond the gym floor. Thick, breathable, and unmistakably premium, this tee features high-definition screen printed artwork inspired by the relentless pursuit of peak performance.',
       features: [
-        '16-Rider Open Mesh network up to 1.2 km',
-        'DSP active wind noise suppression',
-        'IP67 certified waterproof casing',
-        '18 hours continuous battery talk-time'
+        '250 GSM heavy gauge combed cotton jersey',
+        'Relaxed silhouette engineered for broad shoulders and chest',
+        'Breathable water-based discharge screen printing',
+        'Reinforced shoulder-to-shoulder interior neck tape'
       ],
       specs: {
-        'Battery Life': '18 Hours Talk / 250 Hours Standby',
-        'Range': '1.2 km (Mesh Group)',
-        'Water Resistance': 'IP67 Submersible',
-        'Speakers': '40mm High Definition Acoustic Drivers',
-        'Origin': 'Belgaum, India'
+        'Fabric': '100% Long-Staple Combed Cotton',
+        'Weight': '250 GSM Heavy Knit',
+        'Collar': 'Reinforced 1x1 Spandex Rib',
+        'Fit': 'Relaxed Athletic Cut',
+        'Origin': 'Vega Meerut'
       }
     },
     {
-      id: 'vega-iridium-visor',
-      name: 'Vega Optical Iridium Visor',
-      category: 'accessories',
-      categoryName: 'Visors & Tech',
-      tagline: 'High-definition optical anti-scratch shield with multi-coat rainbow iridium reflective treatment.',
-      price: 650,
-      originalPrice: 850,
-      rating: 4.7,
+      id: 'ts-pl-polo-tkp-875-a',
+      name: 'VEGA Pro Performance Pique Polo (TKP 875 A)',
+      category: 'tees',
+      categoryName: 'Tees & Tops',
+      tagline: 'Refined technical pique knit designed for club matches, travel, and coaching staff.',
+      price: 790,
+      originalPrice: 1199,
+      rating: 4.8,
+      reviewsCount: 79,
+      badge: 'Club Standard',
+      badgeType: 'amarante',
+      image: 'assets/img/ts-pl-polo-1.jpg',
+      images: [
+        'assets/img/ts-pl-polo-1.jpg',
+        'assets/img/ts-pl-polo-2.jpg',
+        'assets/img/ts-pl-polo-3.jpg'
+      ],
+      colors: [
+        { name: 'Royal Cobalt Blue', hex: '#1E3A8A' },
+        { name: 'Classic Pure White', hex: '#FAFAFA' },
+        { name: 'Heather Gray', hex: '#6B7280' },
+        { name: 'Volt Yellow', hex: '#EAB308' }
+      ],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'Engineered for tournament travel, cricket pavilion presentation, and athletic luxury wear. Crafted in Meerut from moisture-wicking micro-pique with a structured collar that never curls or loses its sharp edge.',
+      features: [
+        'Advanced micro-pique synthetic knit with moisture wicking',
+        'Engineered anti-curl ribbed collar with clean 3-button placket',
+        'Underarm split hems for complete swing freedom',
+        'UV UPF 40+ protection for day tournaments'
+      ],
+      specs: {
+        'Fabric': '95% Micro-Polyester Pique, 5% Lycra',
+        'Placket': '3-Button Heat-Bonded Placket',
+        'UPF Protection': 'UPF 40+ Sun Defense',
+        'Fit': 'Tailored Athletic Fit',
+        'Origin': 'Vega Meerut Facility'
+      }
+    },
+    {
+      id: 'jackets-aeroshield',
+      name: 'VEGA AeroShield Windrunner Athletic Jacket',
+      category: 'jackets',
+      categoryName: 'Jackets & Outerwear',
+      tagline: 'Ultralight micro-ripstop all-weather windbreaker with packable hood.',
+      price: 1200,
+      originalPrice: 1850,
+      rating: 4.9,
+      reviewsCount: 112,
+      badge: 'All-Weather',
+      badgeType: 'ignite',
+      image: 'assets/img/jackets-1.webp',
+      images: [
+        'assets/img/jackets-1.webp',
+        'assets/img/jackets-2.webp',
+        'assets/img/jackets-3.webp'
+      ],
+      colors: [
+        { name: 'Matte Stealth Black', hex: '#1C1C1C' },
+        { name: 'Vega Team Crimson', hex: '#991B1B' },
+        { name: 'Navy Blue', hex: '#1E293B' }
+      ],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'Built to shield athletes during dawn conditioning drills, rainy training matches, and travel. Features water-shedding DWR treated ripstop, strategic back-cape ventilation, and high-visibility reflective elements.',
+      features: [
+        'Water-repellent DWR micro-ripstop nylon shell',
+        'Back cape storm vents allow internal heat to escape',
+        'Elasticized cuffs and toggle-cord cinch hem',
+        'Full zip with chin-guard garage prevents irritation',
+        'Packable design compresses into its own side pocket'
+      ],
+      specs: {
+        'Shell': '100% Micro-Ripstop Nylon with DWR',
+        'Weight': '210 grams (Ultralight Packable)',
+        'Zippers': 'Reverse-Coil Windproof Zippers',
+        'Fit': 'Athletic Layering Fit',
+        'Origin': 'Vega Meerut'
+      }
+    },
+    {
+      id: 'cricket-pro-whites-teamwear',
+      name: 'VEGA Pro Cricket Tournament Whites (Sublimated Teamwear)',
+      category: 'cricket',
+      categoryName: 'Cricket & Teamwear',
+      tagline: 'Official match-grade cricket whites crafted in India’s sporting capital.',
+      price: 1450,
+      originalPrice: 1999,
+      rating: 5.0,
+      reviewsCount: 230,
+      badge: 'Meerut Heritage',
+      badgeType: 'amarante',
+      image: 'assets/img/cric-sox-1-1.jpg',
+      images: [
+        'assets/img/cric-sox-1-1.jpg',
+        'assets/img/cric-sox-1-2.jpg',
+        'assets/img/cric-sox-1-3.jpg'
+      ],
+      colors: [
+        { name: 'Match Day Cricket Cream', hex: '#FDFBF7' },
+        { name: 'Tournament White', hex: '#FFFFFF' }
+      ],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'Rooted in Meerut — the cricket manufacturing heart of the globe. Vega Pro Cricket Whites are worn by top Ranji Trophy prospects, academy athletes, and cricket leagues. Features reinforced slide-protection knee panels and ventilated mesh groin zones.',
+      features: [
+        'ICC Regulation match white fabric approved for multi-day matches',
+        'Double-layer reinforced knee panels for boundary diving and sliding',
+        'Thermal-wicking micro-mesh inserts underarms and lower back',
+        'Elasticated cricket waistband with heavy-duty internal drawcord',
+        'Available for custom club embroidery and team sublimation'
+      ],
+      specs: {
+        'Fabric': '100% Interlock Air-Knit Moisture Transport Polyester',
+        'GSM': '220 GSM Match Weight',
+        'Regulation': 'ICC Match Spec Compliant',
+        'Customization': 'Club Crest, Sponsor Sublimation & Numbers Available',
+        'Origin': 'Vega Meerut Sports Complex'
+      }
+    },
+    {
+      id: 'athletic-compression-sleeves-pair',
+      name: 'VEGA Elite Graduated Compression Arm Sleeves (Pair)',
+      category: 'cricket',
+      categoryName: 'Cricket & Teamwear',
+      tagline: 'Graduated muscle stabilization, UV defense, and accelerated venous return.',
+      price: 299,
+      originalPrice: 499,
+      rating: 4.8,
       reviewsCount: 310,
-      badge: 'Accessory',
-      badgeType: 'outline',
-      image: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80',
+      badge: 'Essential',
+      badgeType: 'ignite',
+      image: 'assets/img/sleeves-1.jpg',
       images: [
-        'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=700&q=80'
+        'assets/img/sleeves-1.jpg',
+        'assets/img/sleeves-2.jpg'
       ],
       colors: [
-        { name: 'Fire Iridium Red', hex: '#FE492A' },
-        { name: 'Deep Smoke Silver', hex: '#AEB8CF' }
+        { name: 'Midnight Black', hex: '#111111' },
+        { name: 'Cricket Match White', hex: '#FFFFFF' }
       ],
-      sizes: ['Fits Bolt, Cliff, and Torq series'],
-      description: 'Precision molded polycarbonate visor offering distortion-free optical clarity and 100% UVA/UVB protection.',
+      sizes: ['M (Bicep 10-13")', 'L (Bicep 13-16")', 'XL (Bicep 16-19")'],
+      description: 'Used by cricket bowlers, tennis players, runners, and weightlifters to reduce arm pump, stabilize bicep/tricep tendons, and shield against blistering field turf burns and sun exposure.',
       features: [
-        'Anti-scratch hydrophobic hard coating',
-        '100% UV400 radiation filtering',
-        'Tool-less quick release install in 5 seconds'
+        '15-20 mmHg graduated compression reduces muscle oscillation',
+        'Wave-pattern non-slip silicone inner bicep band',
+        'UPF 50+ ultraviolet sun barrier for day matches',
+        'Flatlock 6-thread structural seams for zero rub'
       ],
       specs: {
-        'Material': 'Bayer Optical Grade Polycarbonate',
-        'Coating': 'Anti-scratch & Hydrophobic',
-        'Compatibility': 'Bolt, Cliff, Torq, Crux series',
-        'Certifications': 'ISI & ECE 22.06 Visor Standard',
-        'Origin': 'Belgaum, India'
+        'Composition': '80% High-Grade Polyamide, 20% Spandex',
+        'Compression Rating': '15-20 mmHg Graduated',
+        'Sun Protection': 'UPF 50+ Certified',
+        'Pack Contains': '1 Pair (Left and Right Arm)',
+        'Origin': 'Vega Meerut'
+      }
+    },
+    {
+      id: 'exode-tactical-shorts-beige',
+      name: 'VEGA EXODE Tactical Shorts - Desert Edition (SH/CL/481)',
+      category: 'shorts',
+      categoryName: 'Bottoms & Shorts',
+      tagline: 'Desert sand aesthetic built with reinforced combat utility compartments.',
+      price: 1149,
+      originalPrice: 1499,
+      rating: 4.9,
+      reviewsCount: 71,
+      badge: 'Best Seller',
+      badgeType: 'ignite',
+      image: 'assets/img/exode-tactical-shorts-sh-cl-481-1.webp',
+      images: [
+        'assets/img/exode-tactical-shorts-sh-cl-481-1.webp',
+        'assets/img/exode-tactical-shorts-sh-cl-481-2.webp',
+        'assets/img/exode-tactical-shorts-sh-cl-481-3.webp'
+      ],
+      colors: [
+        { name: 'Desert Sand Beige', hex: '#D2B48C' },
+        { name: 'Coyote Tan', hex: '#8B7355' }
+      ],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'A dedicated military-grade colorway of the flagship EXODE Tactical Short. Designed in Meerut for multi-terrain athletic workouts, mountain rucking, and intensive strength routines.',
+      features: [
+        'Ripstop high-tensile yarn weave',
+        'Reinforced seat seam for heavy squat sessions',
+        'Gusseted utility pockets with quick-pull tabs'
+      ],
+      specs: {
+        'Composition': '90% Ripstop Nylon, 10% Spandex',
+        'Hardware': 'Matte Black Coated Zippers',
+        'Origin': 'Vega Meerut'
+      }
+    },
+    {
+      id: 'nylon-terry-track-pants-stealth-black',
+      name: 'VEGA Nylon Terry Track Pants - Stealth Noir (LW/NT/1282)',
+      category: 'pants',
+      categoryName: 'Track Pants & Joggers',
+      tagline: 'Blackout edition of our bestselling heavyweight performance jogger.',
+      price: 1199,
+      originalPrice: 1699,
+      rating: 5.0,
+      reviewsCount: 115,
+      badge: 'Core Drop',
+      badgeType: 'amarante',
+      image: 'assets/img/nylon-terry-track-pants-1.webp',
+      images: [
+        'assets/img/nylon-terry-track-pants-1.webp',
+        'assets/img/nylon-terry-track-pants-2.webp',
+        'assets/img/nylon-terry-track-pants-3.webp'
+      ],
+      colors: [
+        { name: 'Triple Stealth Black', hex: '#111111' },
+        { name: 'Dark Carbon', hex: '#222222' }
+      ],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+      description: 'The triple-black edition of our flagship Nylon Terry Jogger. Features blackout silicone Vega branding, concealed zippered pockets, and structured ankle ribbing.',
+      features: [
+        'Ultra-dense 290 GSM Nylon Terry blend',
+        'Blackout matte aesthetic with zero reflective noise',
+        'Deep zipped storage that fits iPhone Pro Max securely'
+      ],
+      specs: {
+        'Weight': '290 GSM',
+        'Fit': 'Athletic Slim Taper',
+        'Origin': 'Vega Meerut'
       }
     }
   ],
 
-  teams: [
+  // B2B & Bulk Manufacturing Tiers
+  bulkTiers: [
     {
-      id: 'vega-factory-racing',
-      name: 'Vega Factory Racing',
-      discipline: 'Indian National Motorcycle Racing Championship (INMRC)',
-      leadRider: 'Rahil Noorani',
-      helmetModel: 'Vega Torq Pro Carbon',
-      championships: '3x National Champions (Pro-Stock 301-400cc)',
-      quote: 'At 190 km/h entering Turn 1 at MMRT Chennai, trust in your helmet is everything.',
-      image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80'
+      id: 'tier-1',
+      name: 'Club Starter',
+      units: '50 - 99 Units',
+      discount: '15% OFF',
+      minQty: 50,
+      maxQty: 99,
+      discountPercent: 15,
+      features: [
+        'Factory direct wholesale pricing',
+        'Free digital teamwear mockup within 24h',
+        'Choice of standard club colorways',
+        'Individual player name & number printing',
+        'Estimated turnaround: 7-10 business days'
+      ]
     },
     {
-      id: 'desert-storm-rally',
-      name: 'Vega Apex Dakar Squad',
-      discipline: 'Raid de Himalaya & Desert Storm Cross-Country',
-      leadRider: 'Samir Pathan',
-      helmetModel: 'Vega Off-Road Dakar Peak',
-      championships: 'Winner Desert Storm Moto Category',
-      quote: 'Through 48°C Rajasthan dunes and sub-zero Leh passes, our helmets endure hell.',
-      image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80'
+      id: 'tier-2',
+      name: 'Academy Pro',
+      badge: 'Most Popular',
+      units: '100 - 249 Units',
+      discount: '25% OFF',
+      minQty: 100,
+      maxQty: 249,
+      discountPercent: 25,
+      featured: true,
+      features: [
+        '25% wholesale factory discount',
+        '100% custom all-over sublimation printing',
+        'High-density 3D silicone club crest embroidery',
+        'Dedicated Meerut production line manager',
+        'Free physical fabric swatch & sample kit',
+        'Estimated turnaround: 6-8 business days'
+      ]
+    },
+    {
+      id: 'tier-3',
+      name: 'Institutional Enterprise',
+      units: '250+ Units',
+      discount: '35% OFF',
+      minQty: 250,
+      maxQty: 5000,
+      discountPercent: 35,
+      features: [
+        '35% direct manufacturer volume tier',
+        'Custom fabric milling (custom GSM, weave, color dye)',
+        'Custom branded woven labels & neck-taping',
+        'Individual athlete polybag packaging with barcode',
+        'Priority air dispatch across all Indian states & overseas',
+        'Dedicated B2B account director & WhatsApp hotline'
+      ]
     }
   ],
 
-  // Utility helpers
+  // Athlete Endorsements & Clubs
+  athletes: [
+    {
+      name: 'Aman Sharma',
+      discipline: 'Ranji Trophy Pace Bowler & Cricket Athlete',
+      quote: 'Vega cricket gear and compression wear survive 6 hours of grueling training under the Meerut sun without losing elasticity. Pure performance.',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&q=80',
+      gear: 'Pro Tournament Whites & Jacquard Tee'
+    },
+    {
+      name: 'Vikram Rajput',
+      discipline: 'National Powerlifting & Strength Coach',
+      quote: 'The EXODE Tactical Shorts and Nylon Terry track pants have zero blowouts on deep 280kg squats. Built like armor.',
+      image: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=400&q=80',
+      gear: 'EXODE Tactical Shorts (SH/CL/481)'
+    },
+    {
+      name: 'Pooja Deshmukh',
+      discipline: 'Track & Sprinting Specialist',
+      quote: 'The 2-in-1 hybrid shorts are the best training bottoms in India right now. No chafing, phone never bounces, moisture evaporates in minutes.',
+      image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=400&q=80',
+      gear: '2-in-1 Hybrid Compression Shorts'
+    }
+  ],
+
+  // Sizing Chart for Modal
+  sizeGuide: {
+    tops: [
+      { size: 'S', chest: '36 - 38 in (91-96 cm)', waist: '29 - 31 in', length: '27.5 in' },
+      { size: 'M', chest: '38 - 40 in (96-101 cm)', waist: '31 - 33 in', length: '28.5 in' },
+      { size: 'L', chest: '40 - 42 in (101-106 cm)', waist: '33 - 35 in', length: '29.5 in' },
+      { size: 'XL', chest: '42 - 44 in (106-112 cm)', waist: '35 - 38 in', length: '30.5 in' },
+      { size: 'XXL', chest: '44 - 47 in (112-119 cm)', waist: '38 - 41 in', length: '31.5 in' }
+    ],
+    bottoms: [
+      { size: 'S', waist: '28 - 30 in (71-76 cm)', hip: '35 - 37 in', inseam: '29 in' },
+      { size: 'M', waist: '30 - 32 in (76-81 cm)', hip: '37 - 39 in', inseam: '30 in' },
+      { size: 'L', waist: '32 - 34 in (81-86 cm)', hip: '39 - 41 in', inseam: '31 in' },
+      { size: 'XL', waist: '34 - 36 in (86-91 cm)', hip: '41 - 43 in', inseam: '32 in' },
+      { size: 'XXL', waist: '36 - 39 in (91-99 cm)', hip: '43 - 46 in', inseam: '32.5 in' }
+    ]
+  },
+
+  // Helper Methods
   getProductById(id) {
-    return this.products.find(p => p.id === id) || null;
+    if (!id) return null;
+    return this.products.find(p => p.id === id || p.id.includes(id));
   },
 
-  getProductsByCategory(category) {
-    if (!category || category === 'all') return this.products;
-    return this.products.filter(p => p.category === category);
+  getProductsByCategory(cat) {
+    if (!cat || cat === 'all') return this.products;
+    return this.products.filter(p => p.category === cat);
   },
 
-  formatPrice(price) {
-    return '₹' + price.toLocaleString('en-IN');
+  formatPrice(amount) {
+    return '₹' + Number(amount).toLocaleString('en-IN');
   }
 };
 
-// Attach to window
+// Bind to window for global access across scripts
 window.VEGA_DATA = VEGA_DATA;
