@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEGA® | Performance Motorcycle Helmets & Riding Gear</title>
+  <meta name="description" content="India's iconic helmet brand re-engineered. ECE 22.06 & DOT certified carbon racing helmets, modular touring gear, and rider protection.">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+  <!-- External Libraries: Three.js, Lenis, GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        VEGA<span class="brand-dot">.</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="collection.html" class="nav-link">Collection</a>
+        <a href="bulk.html" class="nav-link">Bulk & Fleet</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="collection.html" class="btn btn-ghost btn-sm" style="display: none; @media(min-width: 768px){display:inline-flex;}">
+          Search Gear
+        </a>
+        <button class="cart-trigger" id="cart-drawer-btn" aria-label="Open Gear Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" id="cart-badge-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with 3D Three.js Visualizer -->
+  <section class="hero-section">
+    <div class="hero-canvas-container">
+      <canvas id="hero-3d-canvas"></canvas>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>2026 Motorsport Series</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span>Engineered for</span>
+          <span class="glow-text">Pure Velocity.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Over 40 years of Indian track heritage, reinvented with aerospace carbon composites, multi-stage venturi airflow, and global ECE 22.06 homologation.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="collection.html" class="btn btn-primary btn-lg">
+            <span>Explore Collection</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="bulk.html" class="btn btn-outline btn-lg">Bulk & Fleet</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">1180<span style="font-size: 1rem; color: var(--ignite);">g</span></div>
+            <div class="stat-label">Ultra-Light 3K Carbon</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">22.06</div>
+            <div class="stat-label">ECE & DOT Certified</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">40+</div>
+            <div class="stat-label">Years of Heritage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Spotlight Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="flex items-center justify-between" style="margin-bottom: var(--space-8);">
+        <div>
+          <span class="eyebrow">Aero Taxonomy</span>
+          <h2>Select Your Discipline</h2>
+        </div>
+        <a href="collection.html" class="btn btn-outline btn-sm">All Categories &rarr;</a>
+      </div>
+
+      <div class="category-cards">
+        <a href="collection.html?category=full-face" class="category-card">
+          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="category-card-content">
+            <span class="badge badge-ignite" style="margin-bottom: 8px;">TRACK & STREET</span>
+            <h3 style="font-size: 1.4rem;">Full Face</h3>
+            <p style="font-size: 13px; color: var(--frost);">Maximum aero impact dispersion</p>
+          </div>
+        </a>
+
+        <a href="collection.html?category=modular" class="category-card">
+          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="category-card-content">
+            <span class="badge badge-outline" style="margin-bottom: 8px;">TOURING</span>
+            <h3 style="font-size: 1.4rem;">Modular Flip-Up</h3>
+            <p style="font-size: 13px; color: var(--frost);">Dual P/J homologated freedom</p>
+          </div>
+        </a>
+
+        <a href="collection.html?category=off-road" class="category-card">
+          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="category-card-content">
+            <span class="badge badge-ignite" style="margin-bottom: 8px;">DIRT & MX</span>
+            <h3 style="font-size: 1.4rem;">Off-Road Rally</h3>
+            <p style="font-size: 13px; color: var(--frost);">Roost peaks & high-flow dust screens</p>
+          </div>
+        </a>
+
+        <a href="collection.html?category=gear" class="category-card">
+          <div class="category-card-bg" style="background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80');"></div>
+          <div class="category-card-content">
+            <span class="badge badge-outline" style="margin-bottom: 8px;">PROTECTION</span>
+            <h3 style="font-size: 1.4rem;">Apparel & Armor</h3>
+            <p style="font-size: 13px; color: var(--frost);">Cordura jackets & carbon gauntlets</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products with 3D Tilt Cards -->
+  <section class="section" style="background: rgba(30, 29, 31, 0.35); border-block: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="flex items-center justify-between" style="margin-bottom: var(--space-8);">
+        <div>
+          <span class="eyebrow">Pro Lineup</span>
+          <h2>Featured Flagships</h2>
+        </div>
+        <a href="collection.html" class="btn btn-secondary">Explore All (10)</a>
+      </div>
+
+      <div class="products-grid" id="featured-products-container">
+        <!-- Rendered dynamically or populated via data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering & Aerodynamic Breakthrough -->
+  <section class="section">
+    <div class="container">
+      <div class="feature-split">
+        <div class="feature-media">
+          <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=80" alt="Aerodynamic Wind Tunnel Testing" loading="lazy">
+        </div>
+
+        <div>
+          <span class="eyebrow">Safety Without Compromise</span>
+          <h2>The Vega Impact Matrix</h2>
+          <p style="margin-top: var(--space-4);">
+            Every Vega helmet undergoes brutal testing in our Belgaum R&D facility. From 7.5 m/s drop towers to high-velocity projectile strikes, our dual-density EPS liners absorb and diffuse rotational kinetic forces before they ever reach the skull.
+          </p>
+
+          <div class="spec-list">
+            <div class="spec-item">
+              <div class="spec-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 2px;">Dual-Density Multi-Zone EPS</h4>
+                <p style="font-size: 13px;">Different compression densities calibrated specifically for temple, crown, and occipital impacts.</p>
+              </div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 2px;">Venturi Airflow Circuit</h4>
+                <p style="font-size: 13px;">Negative pressure creates active suction, extracting stale warm air out of the rear exhaust spoiler.</p>
+              </div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 1rem; margin-bottom: 2px;">Optical Grade Class 1 Visors</h4>
+                <p style="font-size: 13px;">Bayer polycarbonate with zero refractive distortion, UV400 filtering, and Pinlock 70 fog resistance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Racing Squad & INMRC Heritage -->
+  <section class="section" style="background: radial-gradient(circle at 50% 50%, rgba(44, 12, 20, 0.5), #0E0D0E 80%);">
+    <div class="container">
+      <div style="text-align: center; max-width: 640px; margin-inline: auto; margin-bottom: var(--space-12);">
+        <span class="eyebrow">Born on the Asphalt</span>
+        <h2>Vega Factory Racing</h2>
+        <p style="margin-top: 8px;">Pro-level feedback directly from the grid of the Indian National Motorcycle Racing Championship shapes every production shell we build.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-8);" id="teams-container">
+        <!-- Injected via data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Drawer Component -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Gear Bag (<span id="drawer-item-count">0</span>)</h3>
+      <button class="drawer-close" id="drawer-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="drawer-items" id="drawer-items-list">
+      <!-- Items dynamically populated by cart.js -->
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>Subtotal</span>
+        <span class="text-accent" id="drawer-subtotal-price">₹0</span>
+      </div>
+      <div class="drawer-actions">
+        <a href="cart.html" class="btn btn-secondary w-full">View Bag & Full Checkout</a>
+        <a href="cart.html" class="btn btn-primary w-full" id="drawer-fast-checkout">Instant Checkout</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand">VEGA<span class="brand-dot">.</span></a>
+          <p>Engineered for maximum rider safety, aerodynamics, and comfort. Proudly manufactured in India to global motorsport standards.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="collection.html?category=full-face">Full Face Helmets</a></li>
+            <li><a href="collection.html?category=modular">Modular Flip-Up</a></li>
+            <li><a href="collection.html?category=off-road">Off-Road & Motocross</a></li>
+            <li><a href="collection.html?category=gear">Riding Jackets & Gloves</a></li>
+            <li><a href="collection.html?category=accessories">Visors & Intercoms</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="bulk.html">Bulk & Fleet Orders</a></li>
+            <li><a href="docs/COMPONENTS.md">Design System Docs</a></li>
+            <li><a href="collection.html">Dealer Locator</a></li>
+            <li><a href="product.html?id=vega-bolt-bunny">Safety Certifications</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Stay Connected</h4>
+          <p style="font-size: 13px; margin-bottom: 12px;">Get track updates, new graphic drops, and exclusive community discounts.</p>
+          <div style="display: flex; gap: 8px;">
+            <input type="email" placeholder="Enter your email" class="form-input" style="padding: 0.6rem 0.8rem; font-size: 13px;">
+            <button class="btn btn-primary btn-sm">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VEGA Auto Accessories Pvt. Ltd. All rights reserved.</div>
+        <div class="mono">ISI IS:4151 • DOT FMVSS 218 • ECE 22.06</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/tilt.js"></script>
+  <script src="assets/js/hero3d.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <!-- Dynamic Content Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Populate Featured Products (take first 4)
+      const container = document.getElementById('featured-products-container');
+      if (container && window.VEGA_DATA) {
+        const featured = window.VEGA_DATA.products.slice(0, 4);
+        container.innerHTML = featured.map(p => `
+          <article class="product-card tilt-card" data-tilt data-id="${p.id}">
+            <div class="product-badge-group">
+              <span class="badge badge-${p.badgeType || 'ignite'}">${p.badge}</span>
+            </div>
+            <div class="card-media">
+              <img src="${p.image}" alt="${p.name}" loading="lazy">
+            </div>
+            <div class="card-meta">
+              <span>${p.categoryName.toUpperCase()}</span>
+              <div class="card-rating">★ <span>${p.rating}</span></div>
+            </div>
+            <h3 class="card-title">
+              <a href="product.html?id=${p.id}">${p.name}</a>
+            </h3>
+            <p class="card-desc">${p.tagline}</p>
+            <div class="card-footer">
+              <div class="price-box">
+                <span class="price-current">₹${p.price.toLocaleString('en-IN')}</span>
+                <span class="price-original">₹${p.originalPrice.toLocaleString('en-IN')}</span>
+              </div>
+              <button class="card-quick-add" data-add-to-cart="${p.id}" title="Quick Add">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+        `).join('');
+
+        // Re-bind tilt to newly injected elements
+        if (window.VegaTilt) window.VegaTilt.init();
+      }
+
+      // Populate Racing Teams
+      const teamsContainer = document.getElementById('teams-container');
+      if (teamsContainer && window.VEGA_DATA) {
+        teamsContainer.innerHTML = window.VEGA_DATA.teams.map(t => `
+          <div style="background: var(--graphite); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden;">
+            <div style="height: 220px; overflow: hidden; position: relative;">
+              <img src="${t.image}" alt="${t.name}" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, #1E1D1F, transparent);"></div>
+            </div>
+            <div style="padding: var(--space-6);">
+              <span class="badge badge-ignite" style="margin-bottom: 8px;">${t.discipline}</span>
+              <h3 style="margin-bottom: 4px;">${t.name}</h3>
+              <p style="font-size: 13px; color: var(--frost); margin-bottom: 12px;">Lead: <strong style="color: var(--brume);">${t.leadRider}</strong> • Helmet: ${t.helmetModel}</p>
+              <blockquote style="font-style: italic; font-size: 14px; border-left: 2px solid var(--ignite); padding-left: 12px; color: var(--frost);">
+                "${t.quote}"
+              </blockquote>
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
